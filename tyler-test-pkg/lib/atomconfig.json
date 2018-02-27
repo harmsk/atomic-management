@@ -1,0 +1,8 @@
+{
+    "disabledPackages": [
+        "vim-mode-plus"
+    ],
+    "settings": {
+        "editor.fontSize": 20
+    }
+}

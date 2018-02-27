@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle tyler-test-pkg",
+        "command": "tyler-test-pkg:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "tyler-test-pkg",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "tyler-test-pkg:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
