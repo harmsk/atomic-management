@@ -1,14 +1,14 @@
 {
-  "name": "my-package",
-  "main": "./lib/my-package",
+  "name": "my-package2",
+  "main": "./lib/my-package2",
   "version": "0.0.0",
   "description": "A short description of your package",
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "my-package:toggle"
+    "atom-workspace": "my-package2:toggle"
   },
-  "repository": "https://github.com/atom/my-package",
+  "repository": "https://github.com/atom/my-package2",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

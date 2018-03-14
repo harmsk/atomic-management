@@ -1,17 +1,13 @@
 'use babel';
 
-export default class TylerTestPkgView {
+export default class MyPackage2View {
 
   constructor(serializedState) {
     // Create root element
     this.element = document.createElement('div');
-    this.element.classList.add('tyler-test-pkg');
+    this.element.classList.add('my-package2');
 
-    // Create message element
-    const message = document.createElement('div');
-    message.textContent = 'The TylerTestPkg package is Alive! It\'s ALIVE!';
-    message.classList.add('message');
-    this.element.appendChild(message);
+
   }
 
   // Returns an object that can be retrieved when package is activated

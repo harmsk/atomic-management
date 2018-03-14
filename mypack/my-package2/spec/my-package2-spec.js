@@ -1,44 +1,44 @@
 'use babel';
 
-import TylerTestPkg from '../lib/tyler-test-pkg';
+import MyPackage2 from '../lib/my-package2';
 
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
 // To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe('TylerTestPkg', () => {
+describe('MyPackage2', () => {
   let workspaceElement, activationPromise;
 
   beforeEach(() => {
     workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('tyler-test-pkg');
+    activationPromise = atom.packages.activatePackage('my-package2');
   });
 
-  describe('when the tyler-test-pkg:toggle event is triggered', () => {
+  describe('when the my-package2:toggle event is triggered', () => {
     it('hides and shows the modal panel', () => {
       // Before the activation event the view is not on the DOM, and no panel
       // has been created
-      expect(workspaceElement.querySelector('.tyler-test-pkg')).not.toExist();
+      expect(workspaceElement.querySelector('.my-package2')).not.toExist();
 
       // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'tyler-test-pkg:toggle');
+      atom.commands.dispatch(workspaceElement, 'my-package2:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
       });
 
       runs(() => {
-        expect(workspaceElement.querySelector('.tyler-test-pkg')).toExist();
+        expect(workspaceElement.querySelector('.my-package2')).toExist();
 
-        let tylerTestPkgElement = workspaceElement.querySelector('.tyler-test-pkg');
-        expect(tylerTestPkgElement).toExist();
+        let myPackage2Element = workspaceElement.querySelector('.my-package2');
+        expect(myPackage2Element).toExist();
 
-        let tylerTestPkgPanel = atom.workspace.panelForItem(tylerTestPkgElement);
-        expect(tylerTestPkgPanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'tyler-test-pkg:toggle');
-        expect(tylerTestPkgPanel.isVisible()).toBe(false);
+        let myPackage2Panel = atom.workspace.panelForItem(myPackage2Element);
+        expect(myPackage2Panel.isVisible()).toBe(true);
+        atom.commands.dispatch(workspaceElement, 'my-package2:toggle');
+        expect(myPackage2Panel.isVisible()).toBe(false);
       });
     });
 
@@ -51,11 +51,11 @@ describe('TylerTestPkg', () => {
       // workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement);
 
-      expect(workspaceElement.querySelector('.tyler-test-pkg')).not.toExist();
+      expect(workspaceElement.querySelector('.my-package2')).not.toExist();
 
       // This is an activation event, triggering it causes the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'tyler-test-pkg:toggle');
+      atom.commands.dispatch(workspaceElement, 'my-package2:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
@@ -63,10 +63,10 @@ describe('TylerTestPkg', () => {
 
       runs(() => {
         // Now we can test for view visibility
-        let tylerTestPkgElement = workspaceElement.querySelector('.tyler-test-pkg');
-        expect(tylerTestPkgElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'tyler-test-pkg:toggle');
-        expect(tylerTestPkgElement).not.toBeVisible();
+        let myPackage2Element = workspaceElement.querySelector('.my-package2');
+        expect(myPackage2Element).toBeVisible();
+        atom.commands.dispatch(workspaceElement, 'my-package2:toggle');
+        expect(myPackage2Element).not.toBeVisible();
       });
     });
   });

@@ -2,8 +2,8 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle my-package",
-        "command": "my-package:toggle"
+        "label": "Toggle my-package2",
+        "command": "my-package2:toggle"
       }
     ]
   },
@@ -12,11 +12,11 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "my-package",
+          "label": "my-package2",
           "submenu": [
             {
               "label": "Toggle",
-              "command": "my-package:toggle"
+              "command": "my-package2:toggle"
             }
           ]
         }
