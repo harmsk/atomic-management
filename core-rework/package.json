@@ -5,9 +5,7 @@
   "description": "A short description of your package",
   "keywords": [
   ],
-  "activationCommands": {
-    "atom-workspace": "core-rework:toggle"
-  },
+  
   "repository": "https://github.com/atom/core-rework",
   "license": "MIT",
   "engines": {

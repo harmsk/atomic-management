@@ -13,6 +13,10 @@ export default {
   modalPanel: null,
   subscriptions: null,
 
+  // atom.workspace.onDidOpen(() => {
+  //   console.log("detected onDidOpen")
+  //   this.toggle()
+
   activate(state) {
     this.coreReworkView = new CoreReworkView(state.coreReworkViewState);
     this.modalPanel = atom.workspace.addModalPanel({
@@ -96,13 +100,7 @@ export default {
     const pathToProjectFile = fileName
     const base = path.dirname(pathToProjectFile)
 
-    let paths = (contents.paths == null)
-      ? undefined
-      : contents.paths.map(currentPath =>
-        path.isAbsolute(currentPath)
-        ? currentPath
-        : path.join(base, currentPath)
-      )
+    let paths = atom.project.getPaths()
 
     console.log(paths)
 
@@ -120,9 +118,22 @@ export default {
     // console.log('CoreRework was toggled!')
     projectPaths = atom.project.getPaths()
     // console.log(projectPaths)
-    projectPaths.forEach(projectPath =>
-      this.readConfigFile(projectPath)
-    )
+    editor = atom.workspace.getActiveTextEditor()
+    panePath = editor.getPath()
+    // console.log(typeof panePath)
+    maxMatchingPathLength = 0
+    closestProjectPath = ""
+    console.log(projectPaths)
+    projectPaths.forEach(projectPath => {
+      if (panePath.startsWith(projectPath)) {
+        if (projectPath.length > maxMatchingPathLength) {
+          maxMatchingPathLength = projectPath.length
+          closestProjectPath = projectPath
+        }
+      }
+    })
+    console.log(closestProjectPath)
+    this.readConfigFile(closestProjectPath)
   }
 
 };
