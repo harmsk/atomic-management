@@ -27,6 +27,19 @@ export default {
     this.subscriptions.add(atom.commands.add('atom-workspace', {
       'core-rework:toggle': () => this.toggle()
     }));
+    atom.workspace.observePanes((pane) => {
+      pane.onDidActivate(() => {
+        console.log("Detected pane activate")
+        this.toggle()
+      })
+    })
+
+    // atom.workspace.observePanes((pane) => {
+    //   atom.workspace.onDidAddPane(({pane}) => {
+    //     console.log('onDidAddPane detected')
+    //   })
+    // })
+
   },
 
   deactivate() {
@@ -41,29 +54,26 @@ export default {
     };
   },
 
-  paneOps(pane) {
-    // If Pane is TextEditor
-    console.log('pane')
-    if (pane.activeItem &&
-       pane.activeItem.__proto__.constructor.name &&
-       pane.activeItem.__proto__.constructor.name == "TextEditor") {
-          this.readConfigFile(pane.activeItem.getPath(), pane)
-    }
-  },
-
-  readConfigFile(filePath, pane) {
+  readConfigFile(dirName) {
     let contents
-    const dirName = path.dirname(filePath)
-    console.log(filePath)
     fs.readdir(dirName,
       (err, files) => {
       if (files) {
         files.forEach( (file) => {
-          if (path.extname(file) == ".cson") {
+          if (file.endsWith('.atomproject.cson')) {
             fileName = path.join(dirName, file)
-            // const contents = JSON.parse(fs.readFileSync(fileName))
             try {
               contents = CSON.readFileSync(fileName)
+              console.log(contents)
+            } catch (e) {
+              throw new Error('Unable to read supplied project specification file.')
+              console.log(e)
+            }
+            this.generateProjectSpecification(contents, fileName)
+          } else if (file.endsWith('.atomproject.json')) {
+            fileName = path.join(dirName, file)
+            try {
+              contents = JSON.parse(fs.readFileSync(fileName))
               console.log(contents)
             } catch (e) {
               throw new Error('Unable to read supplied project specification file.')
@@ -81,7 +91,7 @@ export default {
     const pathToProjectFile = fileName
     const base = path.dirname(pathToProjectFile)
 
-    const paths = (contents.paths == null)
+    let paths = (contents.paths == null)
       ? undefined
       : contents.paths.map(currentPath =>
         path.isAbsolute(currentPath)
@@ -89,7 +99,7 @@ export default {
         : path.join(base, currentPath)
       )
 
-    // const paths = null
+    paths = null
 
     console.log(paths)
 
@@ -105,9 +115,11 @@ export default {
 
   toggle() {
     console.log('CoreRework was toggled!')
-    atom.workspace.getPanes().map((pane) => {
-         this.paneOps(pane);
-    });
+    projectPaths = atom.project.getPaths()
+    console.log(projectPaths)
+    projectPaths.forEach(projectPath =>
+      this.readConfigFile(projectPath)
+    )
   }
 
 };
