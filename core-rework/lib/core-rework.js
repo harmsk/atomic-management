@@ -27,12 +27,17 @@ export default {
     this.subscriptions.add(atom.commands.add('atom-workspace', {
       'core-rework:toggle': () => this.toggle()
     }));
-    atom.workspace.observePanes((pane) => {
-      pane.onDidActivate(() => {
-        console.log("Detected pane activate")
-        this.toggle()
-      })
+
+    atom.workspace.onDidOpen(() => {
+      console.log("detected onDidOpen")
+      this.toggle()
     })
+    // atom.workspace.observePanes((pane) => {
+    //   pane.onDidActivate(() => {
+    //     console.log("Detected pane activate")
+    //     this.toggle()
+    //   })
+    // })
 
     // atom.workspace.observePanes((pane) => {
     //   atom.workspace.onDidAddPane(({pane}) => {
@@ -64,7 +69,7 @@ export default {
             fileName = path.join(dirName, file)
             try {
               contents = CSON.readFileSync(fileName)
-              console.log(contents)
+              // console.log(contents)
             } catch (e) {
               throw new Error('Unable to read supplied project specification file.')
               console.log(e)
@@ -74,7 +79,7 @@ export default {
             fileName = path.join(dirName, file)
             try {
               contents = JSON.parse(fs.readFileSync(fileName))
-              console.log(contents)
+              // console.log(contents)
             } catch (e) {
               throw new Error('Unable to read supplied project specification file.')
               console.log(e)
@@ -99,8 +104,6 @@ export default {
         : path.join(base, currentPath)
       )
 
-    paths = null
-
     console.log(paths)
 
     projectSpecification = {
@@ -109,14 +112,14 @@ export default {
       config: contents.config
     }
 
-    console.log(projectSpecification)
+    // console.log(projectSpecification)
     atom.project.replace(projectSpecification)
   },
 
   toggle() {
-    console.log('CoreRework was toggled!')
+    // console.log('CoreRework was toggled!')
     projectPaths = atom.project.getPaths()
-    console.log(projectPaths)
+    // console.log(projectPaths)
     projectPaths.forEach(projectPath =>
       this.readConfigFile(projectPath)
     )
