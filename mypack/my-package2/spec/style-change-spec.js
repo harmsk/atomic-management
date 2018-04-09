@@ -13,15 +13,15 @@ function testConfig(demoConfig) {
   const configKeys = Object.keys(demoConfig);
   const paneStyleKeys = Object.keys(paneStyle);
   configKeys.forEach((key) => {
-    expect(demoConfig[key]).toBe(paneStyle[key]);
+    expect(demoConfig[key]).not.toBe(paneStyle[key]);
   });
 }
 
 var demoConfig = {
-  "backgroundColor": "white",
-  "color": "red",
-  "tabSize": "2",
-  "columnWidth": "8em"
+  "backgroundColor": "blue",
+  "color": "blue",
+  "tabSize": "4",
+  "columnWidth": "4em"
 };
 
 generateConfigFile(demoConfig);
@@ -29,7 +29,7 @@ generateConfigFile(demoConfig);
 fdescribe('backgroundColor', () => {
     it('should change the backgroundColor of the panel', () => {
       unitConfig = {
-        "backgroundColor": "white"
+        "backgroundColor": "blue"
       };
       testConfig(unitConfig);
     });
@@ -38,7 +38,7 @@ fdescribe('backgroundColor', () => {
 fdescribe('color', () => {
     it('should change the color of the panel', () => {
       unitConfig = {
-        "color": "red"
+        "color": "blue"
       };
       testConfig(unitConfig);
     });
@@ -47,7 +47,7 @@ fdescribe('color', () => {
 fdescribe('tabSize', () => {
     it('should change the tab size of the panel', () => {
       unitConfig = {
-        "tabSize": "2"
+        "tabSize": "4"
       };
       testConfig(unitConfig);
     });
@@ -56,7 +56,7 @@ fdescribe('tabSize', () => {
 fdescribe('columnWidth', () => {
     it('should change the column width of the panel', () => {
       unitConfig = {
-        "columnWidth": "8em"
+        "columnWidth": "4em"
       };
       testConfig(unitConfig);
     });
