@@ -1,0 +1,20 @@
+{
+  "paths": [
+    "./dummyProject"
+    # "~/desktop/secondDummyProject"
+    ],
+  "config": {
+    core: {
+      themes: [
+        "one-light-ui",
+        "one-light-syntax"
+      ]
+      disabledPackages: [
+        "php-server",
+        "my-package2"
+      ]
+    }
+    editor:
+      fontSize:12
+  }
+}
