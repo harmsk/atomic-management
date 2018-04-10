@@ -1,6 +1,6 @@
 {
   "paths": [
-    "./dummyProject"
+    "."
     # "~/desktop/secondDummyProject"
     ],
   "config": {
@@ -10,11 +10,10 @@
         "one-light-syntax"
       ]
       disabledPackages: [
-        "php-server",
-        "my-package2"
+        "php-server"
       ]
     }
     editor:
-      fontSize:13
+      fontSize:20
   }
 }

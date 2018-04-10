@@ -106,7 +106,7 @@ export default {
 
     projectSpecification = {
       originPath: pathToProjectFile,
-      paths,
+      paths: contents.paths,
       config: contents.config
     }
 
@@ -122,8 +122,9 @@ export default {
     panePath = editor.getPath()
     // console.log(typeof panePath)
     maxMatchingPathLength = 0
-    closestProjectPath = ""
+    closestProjectPath = "."
     console.log(projectPaths)
+    console.log(panePath)
     projectPaths.forEach(projectPath => {
       if (panePath.startsWith(projectPath)) {
         if (projectPath.length > maxMatchingPathLength) {

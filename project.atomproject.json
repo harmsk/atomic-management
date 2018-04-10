@@ -1,13 +1,17 @@
 {
-    "paths": ["."],
-    "config":{
-        "*": {
-            "core": {
-                "themes": [
-                    "one-light-ui",
-                    "one-light-syntax"
-                ]
-            }
-        }
+    "paths": [".", "./core-rework"],
+    "config": {
+      "core": {
+        "themes": [
+          "one-light-ui",
+          "one-light-syntax"
+        ],
+        "disabledPackages": [
+          "php-server"
+        ]
+      },
+      "editor":{
+        "fontSize":14
+      }
     }
 }
