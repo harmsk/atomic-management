@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle core-rework",
+        "command": "core-rework:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "core-rework",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "core-rework:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

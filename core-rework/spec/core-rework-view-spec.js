@@ -1,8 +1,8 @@
 'use babel';
 
-import MyPackage2View from '../lib/my-package2-view';
+import CoreReworkView from '../lib/core-rework-view';
 
-describe('MyPackage2View', () => {
+describe('CoreReworkView', () => {
   it('has one valid test', () => {
     expect('life').toBe('easy');
   });
