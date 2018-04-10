@@ -1,0 +1,13 @@
+{
+    "paths": ["."],
+    "config":{
+        "*": {
+            "core": {
+                "themes": [
+                    "one-light-ui",
+                    "one-light-syntax"
+                ]
+            }
+        }
+    }
+}
