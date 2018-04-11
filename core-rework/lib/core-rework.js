@@ -1,6 +1,5 @@
 'use babel';
 
-import CoreReworkView from './core-rework-view';
 import { CompositeDisposable } from 'atom';
 
 const fs = require('fs');
@@ -18,7 +17,6 @@ export default {
   //   this.toggle()
 
   activate(state) {
-    this.coreReworkView = new CoreReworkView(state.coreReworkViewState);
 
     // Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     this.subscriptions = new CompositeDisposable();
