@@ -5,15 +5,15 @@
     ],
   "config": {
     core: {
-      themes: [
-        "one-light-ui",
-        "one-light-syntax"
-      ]
+      # themes: [
+      #   "one-light-ui",
+      #   "one-light-syntax"
+      # ]
       disabledPackages: [
         "php-server"
       ]
     }
     editor:
-      fontSize:20
+      fontSize:14
   }
 }
