@@ -12,10 +12,6 @@ export default {
   coreReworkView: null,
   subscriptions: null,
 
-  // atom.workspace.onDidOpen(() => {
-  //   console.log("detected onDidOpen")
-  //   this.toggle()
-
   activate(state) {
 
     // Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
@@ -27,8 +23,12 @@ export default {
     }));
 
     atom.workspace.onDidOpen((e) => {
-      //Only on opening the main panel or an editor, not other panels such as TreeView
-      if (e.item.constructor.name=='PanelDock' || e.item.constructor.name=='TextEditor') {
+      //Only on opening the main panel or an editor
+      //Also need TreeView on opening Atom with folder already
+      if (e.item.constructor.name=='PanelDock'
+        || e.item.constructor.name=='TextEditor'
+        || e.item.constructor.name=='TreeView'
+      ) {
         this.setConfig()
       }
     })
@@ -37,16 +37,16 @@ export default {
 
   deactivate() {
     this.subscriptions.dispose();
-    this.coreReworkView.destroy();
+    // this.coreReworkView.destroy();
   },
 
   serialize() {
     return {
-      coreReworkViewState: this.coreReworkView.serialize()
+      // coreReworkViewState: this.coreReworkView.serialize()
     };
   },
 
-  readConfigFile(configName, pathsToOpen) {
+  readConfigFile(configName) {
     try {
       if (configName.endsWith('.atomproject.cson')) {
           contents = CSON.readFileSync(configName)
@@ -57,19 +57,9 @@ export default {
           throw new Error('Unable to read supplied project specification file.')
           console.log(e)
     }
-    this.generateProjectSpecification(contents, configName, pathsToOpen)
+    atom.config.resetProjectSettings(contents.config, configName)
   },
 
-  generateProjectSpecification(contents, projectConfigPath, filesToOpen) {
-    let projectSpecification = {}
-    let paths = atom.project.getPaths()
-    projectSpecification = {
-      originPath: projectConfigPath,
-      paths: filesToOpen,
-      config: contents.config
-    }
-    atom.project.replace(projectSpecification)
-  },
 
   setConfig() {
     projectPaths = atom.project.getPaths()
@@ -84,7 +74,7 @@ export default {
       case 0:
         return;
       case 1:
-        this.readConfigFile(this.projectConfigs[0].config, projectPaths)
+        this.readConfigFile(this.projectConfigs[0].config)
         break;
       default:
         // If the default exists and one of the paths is the current default
@@ -110,7 +100,7 @@ export default {
             checkboxLabel: 'Remember my choice',
             checkboxChecked: true,
           }, (response, checkboxChecked) => {
-            this.readConfigFile(this.projectConfigs[response].config, projectPaths)
+            this.readConfigFile(this.projectConfigs[response].config)
             if(checkboxChecked) {
               this.default=this.projectConfigs[response].config
             }
