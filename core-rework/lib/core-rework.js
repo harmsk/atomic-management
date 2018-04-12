@@ -9,7 +9,6 @@ const CSON = require('season')
 
 export default {
 
-  coreReworkView: null,
   subscriptions: null,
 
   activate(state) {
@@ -20,6 +19,7 @@ export default {
     // Register command that toggles this view
     this.subscriptions.add(atom.commands.add('atom-workspace', {
       'core-rework:toggle': () => this.setConfig(),
+      'core-rework:resetState': () => this.resetState(),
     }));
 
     atom.workspace.onDidOpen((e) => {
@@ -48,16 +48,17 @@ export default {
 
   readConfigFile(configName) {
     try {
-      if (configName.endsWith('.atomproject.cson')) {
+      console.log(`configName: ${configName}`);
+      if (configName.endsWith('.atomconfig.cson')) {
           contents = CSON.readFileSync(configName)
-      } else if (configName.endsWith('.atomproject.json')) {
+      } else if (configName.endsWith('.atomconfig.json')) {
           contents = JSON.parse(fs.readFileSync(configName))
       }
     } catch (e) {
           throw new Error('Unable to read supplied project specification file.')
           console.log(e)
     }
-    atom.config.resetProjectSettings(contents.config, configName)
+    atom.config.resetProjectSettings(contents, configName)
   },
 
 
@@ -65,7 +66,7 @@ export default {
     projectPaths = atom.project.getPaths()
     this.projectConfigs = []
     projectPaths.forEach(projectPath => {
-      var config = glob.sync(`${projectPath}/*.atomproject.?(cson|json)`)
+      var config = glob.sync(`${projectPath}/*.atomconfig.?(cson|json)`)
       if (config.length!=0) {
         this.projectConfigs.push({projectPath, config: config[0]})
       }
@@ -86,8 +87,8 @@ export default {
             return def.startsWith(path)
           })
         }
-        if(this.default && projectPaths.some(defaultCheck(this.default))) {
-          this.readConfigFile(this.default, projectPaths)
+        if(this.defaultConfig && projectPaths.some(defaultCheck(this.defaultConfig))) {
+          this.readConfigFile(this.defaultConfig, projectPaths)
         } else {
           var buttons = this.projectConfigs.map(pc => {
             var split = pc.projectPath.split('/');
@@ -95,18 +96,23 @@ export default {
           })
           atom.confirm({
             message: 'Multiple Config ',
-            detail: 'We\'ve detected multiple configuration files, which would you like to choose: ',
+            detail: 'We\'ve detected multiple .atomconfig files in your open projects, which would you like to apply: ',
             buttons: buttons,
             checkboxLabel: 'Remember my choice',
             checkboxChecked: true,
           }, (response, checkboxChecked) => {
             this.readConfigFile(this.projectConfigs[response].config)
             if(checkboxChecked) {
-              this.default=this.projectConfigs[response].config
+              this.defaultConfig=this.projectConfigs[response].config
             }
           })
         }
     }
+  },
+
+  resetState() {
+    this.defaultConfig = null
+    this.setConfig()
   }
 
 };
