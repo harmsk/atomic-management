@@ -5,7 +5,7 @@
   "description": "Per-project Atom text editor configurations, for each window",
   "keywords": [],
   "activationCommands": {},
-  "repository": "https://github.com/atom/atomic-management",
+  "repository": "https://github.com/saqif280/atomic-management",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
