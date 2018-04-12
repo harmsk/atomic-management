@@ -2,7 +2,7 @@
 Per-project Atom text editor configurations, for each window.
 
 ## Prerequisites
-Requires Atom v1.24.1 or above
+Requires Atom v1.26 or above
 
 ## Usage
 When a folder/project is loaded, Atomic Management will look for a `*.atomproject.cson` or `*.atomproject.json` file in the opened folder. If no such file is found, global configuration are used (as per usual). If a project file is indeed found, they are loaded as Project Configurations and will override the global configuration when in the project's context.
