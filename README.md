@@ -12,7 +12,7 @@ This allows for configuring visuals for different projects (font size, color, th
 Usage of this package should be straightforward after install, as long as the `atomconfig` file is setup correctly. If you encounter issues, feel free to submit an issue on Github.
 
 ## Project files
-Project files should be specified according to the official Atom Per-Project Configuration file guidelines. For example:
+Project files should be specified similar to a `.atom/config.cson` file. For example:
 
 ```
 sample.atomconfig.cson
@@ -30,5 +30,9 @@ editor:
   fontSize:14
 
 ```
+
+The current version of this package only supports configuration of the two core namespaces of Atom, `core` and `editor`.
+
+For a full list of configurable content, please see the official atom documentation [here](https://flight-manual.atom.io/using-atom/sections/basic-customization/#configuration-key-reference),
 
 The configuration described in the `.atomconfig` file will override the default Atom configuration, and each operates independently of each other. Directly edit the corresponding `.atomconfig` file if you wish to change per project settings, and directly edit global configuration either through `Edit > Preferences` or `Edit > Config`.
