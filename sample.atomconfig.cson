@@ -1,7 +1,7 @@
 core: {
   themes: [
-    "one-light-ui",
-    "one-light-syntax"
+    # "one-light-ui",
+    # "one-light-syntax"
   ]
   disabledPackages: [
     # "php-server"
