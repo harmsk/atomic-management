@@ -1,8 +1,8 @@
 {
   "name": "atomic-management",
   "main": "./lib/atomic-management",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "version": "0.0.1",
+  "description": "Per-project Atom text editor configurations, for each window",
   "keywords": [],
   "activationCommands": {},
   "repository": "https://github.com/atom/atomic-management",
