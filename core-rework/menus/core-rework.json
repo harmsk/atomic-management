@@ -15,8 +15,12 @@
           "label": "core-rework",
           "submenu": [
             {
-              "label": "Toggle",
+              "label": "Set config",
               "command": "core-rework:toggle"
+            },
+            {
+              "label": "Reset remembered config",
+              "command": "core-rework:resetState"
             }
           ]
         }
