@@ -4,8 +4,8 @@ core: {
     "one-light-syntax"
   ]
   disabledPackages: [
-    # "atomic-management"
+    "markdown-preview"
   ]
 }
 editor:
-  fontSize:15
+  fontSize:20
