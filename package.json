@@ -1,7 +1,7 @@
 {
   "name": "atomic-management",
   "main": "./lib/atomic-management",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Per-project Atom text editor configurations, for each window",
   "keywords": [],
   "activationCommands": {},
