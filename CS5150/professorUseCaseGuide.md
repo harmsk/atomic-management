@@ -11,9 +11,9 @@ If you have any questions regarding the use of the results of the user testing, 
 
 ## Task 1
 Using the Atom text editor, create a configuration file in the folder `UserTesting` in `Documents`. Your goal is that under this configuration, users opening this project will have files with the following configuration:
-* Text color is red,
-* The markdown live preview is enabled
-* Tab spacing is set to 2 spaces
+* UI Theme is Atom Light, Syntax Theme is Solarized Dark,
+* The markdown live preview is disabled
+* Tab length is set to 2 spaces
 Your goal is to do this without manually changing any of these properties, use only a single config file.
 When you are sure these settings are present, please signal the member of the development team administering this test.
 

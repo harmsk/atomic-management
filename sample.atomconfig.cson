@@ -1,11 +1,11 @@
 core: {
   themes: [
-    "one-light-ui",
-    "one-light-syntax"
+    "one-dark-ui",
+    "dark-solarized-syntax"
   ]
   disabledPackages: [
-    "markdown-preview"
+    # "markdown-preview"
   ]
 }
 editor:
-  fontSize:20
+  fontSize:15

@@ -11,19 +11,23 @@ If you have any questions regarding the use of the results of the user testing, 
 
 ## Task 1
 Using the Atom text editor, open the file `test1.md` in the folder `UserTesting` in `Documents`. Your goal is to open the file with the following configuration:
-* Text color is red,
-* The markdown live preview is enabled
+* Background styling is white,
+* The markdown live preview is disabled
 * Tab spacing is set to 2 spaces
+
 Your goal is to do this without manually changing any of these properties.
-We will give you the following advice: In order for a configuration styling to take affect, atom must be opened with a project that contains a `.atomproject` file, not just opening the file itself.
+We will give you the following advice: In order for a configuration styling to take affect, atom must be opened with a project that contains a `.atomconfig` file, not just opening the file itself.
 When you are sure these settings are present, please signal the member of the development team administering this test.
 
 
 ## Task 2
 Using the Atom text editor, open the file `test2.md` in the folder `Test2` in the folder `UserTesting` in `Documents`. Your goal is to open the file with the following configuration:
 * Text color is green,
-* The markdown live preview is enabled
+* The Package Generator package is disabled
 * Tab spacing is set to 4 spaces
 Your goal is to do this without manually changing any of these properties.
+
+For this test, you may encounter *errors* when trying to set up the package. Follow the notification that pop up for help. If you are truly stuck, continue on.
+
 We will give you the following advice: In order for a configuration styling to take affect, atom must be opened with a project that contains a `.atomproject` file, not just opening the file itself.
 When you are sure these settings are present, please signal the member of the development team administering this test
