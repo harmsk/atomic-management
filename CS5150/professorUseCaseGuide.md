@@ -17,7 +17,6 @@ Using the Atom text editor, create a configuration file in the folder `UserTesti
 Your goal is to do this without manually changing any of these properties, use only a single config file.
 When you are sure these settings are present, please signal the member of the development team administering this test.
 
-
 ## Task 2
 Using the Atom text editor, create a configuration file in the folder `UserTesting` in `Documents`. Create a config file that you believe would be useful for your personal use.
 Upon completion, please signal the member of the development team administering this test. You will then be asked a series of follow up questions.

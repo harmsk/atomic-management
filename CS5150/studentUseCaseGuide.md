@@ -1,5 +1,5 @@
 ## Introduction
-Thank you for participating in user testing for our new additions to the Atom Text Editor. Today, you will be presented with a variety of tasks using our new package and the Atom Text Editor. The focus of this code will be on the program itself, not on you as a user.
+Thank you for participating in user testing for our new additions to the Atom Text Editor. Today, you will be presented with a variety of tasks using a new package and the Atom Text Editor. **The focus of this code will be on the program itself, not on you as a user**. You are free to quit at any time.
 
 This test will take approximately 30 minutes, and you may opt out of this testing at any time. All personal data will be kept confidential, reviewed only the development team and the CS 5150 course staff.  The results of your test will be written up in a report with all personally identifiable data removed.
 
@@ -14,6 +14,31 @@ Using the Atom text editor, open the file `test1.md` in the folder `UserTesting`
 * Background styling is white,
 * The markdown live preview is disabled
 * Tab spacing is set to 2 spaces
+
+<!--  Task should be situated that they will actually use (not theme), don't be soso leading
+, not setting the user up for why they are making these changes. Motivation. Tree view package, hide version control package. Scenarios, what are the professor use cases. It's a seperate objective. The task 3 should be how do people react to changes. -->
+
+<!--  Open test 1, not the config file, be more clear. "You are expected". The situation is students have squ-lite files in the git ignore, but the website.sqlite was hid by git because of atom files. "In a piazza post, the instructor said ... go to settings and do this.". For our use case, the professor said to edit the config file.  Ask them to, open another project, we want to have multiple projects in the "Same window at the same time".
+Use cases
+-- Instructors
+create file,
+test out file - find documentation for plugin (give link),
+-- students
+test to make sure the students configuration is loaded,
+(if they muk, what kind of things do they do)
+Use case with conflicting settings from multiple projects open, THIS WILL HAPPEN,
+Change the setting, they will likely try to do it global
+
+
+General
+Make sure to brief them - testing the software, not them
+There is a new package out there, we want to know if it should be used in 1300.
+GET RID OF PRONOUNS.
+Please talk outloud as you think through. As adminstrators, we can prompt them to speak outloud. I see you are clicking on things, can you explain why. "Re"
+
+Add test case about changing a factor, you forgot to install this required pacakge.
+Markdown preview isn't installed, lets see what happens when they are supposed to do something with it
+-->
 
 Your goal is to do this without manually changing any of these properties.
 We will give you the following advice: In order for a configuration styling to take affect, atom must be opened with a project that contains a `.atomconfig` file, not just opening the file itself.
