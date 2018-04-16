@@ -5,7 +5,7 @@ This test will take approximately 30 minutes. All personal data will be kept con
 
 Over the course of the test, the development team will be recording your own screen interaction using screen capture. Moreover, the development team will be personally observing and noting your interaction with our program. Again, the focus of our notes will be on the program, not you as the user.
 
-You will be presented with a guide on how to work with our package, but this will be the only guidance the development team will give you regarding the user testing. If you are truly stuck on a particular aspect, you may skip it; however, the development team will not be able to answer any questions you have while the test is being conducted. At the end of the test, the conductors of the test will ask you some questions regarding your experience with out package.
+You will be presented with a [guide](https://github.com/Saqif280/atomic-management#readme) on how to work with our package, but this will be the only guidance the development team will give you regarding the user testing. If you are truly stuck on a particular aspect, you may skip it; however, the development team will not be able to answer any questions you have while the test is being conducted. At the end of the test, the conductors of the test will ask you some questions regarding your experience with out package.
 
 If you have any questions regarding the use of the results of the user testing, feel free to contact the development team liaison, Daniel Hirsch, at djh329@cornell.edu. We thank you for your participation.
 
