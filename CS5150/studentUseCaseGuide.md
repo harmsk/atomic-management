@@ -23,5 +23,5 @@ You, an ever diligent student, decide to go to office hours to discuss with your
 
 ## Task 4
 **(Professor Harms, This is the task I am unsure of the purpose of. Please give some feedback in this area especially)**
-
-The professor, knowing that pesky students will use a package called `Markdown Preview` to cheat. So he disabled it. What the professor doesn't know is you have an evil side, and want it enabled. Enable it.
+In the beginning of the semester, the professor had all his students download the `Whitespace` and `Markdown Preview` packages. However, you never did.
+For this project, do you need to install these packages?
