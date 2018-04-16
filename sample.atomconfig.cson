@@ -1,10 +1,10 @@
 core: {
   themes: [
-    "one-light-ui",
-    "one-light-syntax"
+    "one-dark-ui",
+    "dark-solarized-syntax"
   ]
   disabledPackages: [
-    # "atomic-management"
+    # "markdown-preview"
   ]
 }
 editor:

@@ -40,6 +40,51 @@ describe('AtomicManagement', () => {
         atom.commands.dispatch(workspaceElement, 'atomic-management:toggle');
         expect(atomicManagementPanel.isVisible()).toBe(false);
       });
+    })
+
+    describe('Change configurations of a project', () => {
+      let editor
+      beforeEach(() => {
+        const directory = temp.mkdirSync()
+        atom.project.setPaths([directory])
+        const filePath = path.join(directory, 'myProject.atomconfig.cson')
+        console.log("path = " + filePath)
+        //editor = atom.workspace.open(filePath)
+        editor = atom.workspace.buildTextEditor()
+      })
+      it('sets a project specification', () => {
+        expect(atom.config.get('this.fontsize') == '10').toBe(false)
+
+        atom.workspace.onDidOpen()
+        this.toggle()
+        expect(atom.config.get('this.fontSize')).toBe('10')
+        expect(atom.config.get('this.themes')).toBe('one-light-ui')
+        expect(atom.config.get('this.themes')).toBe('one-light-syntax')
+      })
+    });
+
+    describe('Enable/Disable a project', () => {
+      let editor
+      beforeEach(() => {
+        atom.packages.enablePackage('my-package2')
+        atom.packages.enablePackage('php-server')
+
+        expect(atom.packages.isPackageDisabled('my-package2')).toBe(false)
+        expect(atom.packages.isPackageDisabled('php-server')).toBe(false)
+
+        const directory = temp.mkdirSync()
+        atom.project.setPaths([directory])
+        const filePath = path.join(directory, 'myProject.atomconfig.cson')
+        console.log("path = " + filePath)
+        //editor = atom.workspace.open(filePath)
+        editor = atom.workspace.buildTextEditor()
+      })
+      it('disables two dummy packages ', () => {
+        atom.workspace.onDidOpen()
+        this.toggle()
+        expect(atom.packages.isPackageDisabled('my-package2')).toBe(true)
+        expect(atom.packages.isPackageDisabled('php-server')).toBe(true)
+      })
     });
 
     it('hides and shows the view', () => {
