@@ -15,6 +15,8 @@
 
 3. Copy the `INFO1111` folder into your Documents
 
+4. In your atom settings "Cmd+Shift+P >> setting: open", turn off Soft Wrap
+
 
 ### When the student gets there
 1. Read them the script below:
