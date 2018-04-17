@@ -15,7 +15,9 @@
 
 3. Copy the `INFO1111` folder into your Documents
 
-4. In your atom settings "Cmd+Shift+P >> setting: open", turn off Soft Wrap
+3. Make sure the `Php Server` package is installed
+
+4. In your atom settings "`Cmd+Shift+P -> Settings: Open -> Editor`", turn off Soft Wrap
 
 
 ### When the student gets there
