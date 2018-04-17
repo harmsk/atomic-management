@@ -1,10 +1,10 @@
 core: {
   themes: [
-    "one-daek-ui",
+    "one-dark-ui",
     "one-dark-syntax"
   ]
   disabledPackages: [
-    # "markdown-preview"
+    # "php-server"
   ]
 }
 editor:

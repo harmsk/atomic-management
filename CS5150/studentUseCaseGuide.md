@@ -22,6 +22,4 @@ For INFO 1111, the professor gave you an example from last year's class to use a
 You, an ever diligent student, decide to go to office hours to discuss with your TA your new code. However, he has a small screen that he works off of, and wants you to make no line longer than 80. As a regular user of Atom, you know that you don't have to sit and hit `enter` at every line, and that you can change the Atom preferred line length setting. Make your TA happy and have no line be longer than 80 characters
 
 ## Task 4
-**(Professor Harms, This is the task I am unsure of the purpose of. Please give some feedback in this area especially)**
-In the beginning of the semester, the professor had all his students download the `Whitespace` and `Markdown Preview` packages. However, you never did.
-For this project, do you need to install these packages?
+You've just cloned your assignment and are beginning to work on it. You decide you will start up a php-server with the starter code. Note: In the beginning of the semester, the professor had all his students download the `Whitespace` and `php server` packages. However, you never did.
