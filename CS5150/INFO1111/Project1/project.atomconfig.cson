@@ -1,11 +1,7 @@
 core: {
-  themes: [
-    "one-dark-ui",
-    "one-dark-syntax"
-  ]
   disabledPackages: [
     # "php-server"
   ]
 }
 editor:
-  fontSize:15
+  tabLength:4
