@@ -19,7 +19,7 @@ In the folder `Documents/INFO111/Project1` you will find the starter code the pr
 For INFO 1111, the professor gave you an example from last year's class to use as reference. You can find it in `Documents/INFO1111/Example17`. Open up the project in Atom.
 
 ## Task 3
-You, an ever diligent student, decide to go to office hours to discuss with your TA your new code. However, he has a small screen that he works off of, and wants you to make no line longer than 80. As a regular user of Atom, you know that you don't have to sit and hit `enter` at every line, and that you can change the Atom preferred line length setting. Make your TA happy and have no line be longer than 70 characters
+You, an ever diligent student, decide to go to office hours to discuss with your TA your new code. However, he has a small screen that he works off of, and wants you to make no line longer than 70. As a regular user of Atom, you know that you don't have to sit and hit `enter` at every line, and that you can change the Atom preferred line length setting. Make your TA happy and have no line be longer than 70 characters
 
 ## Task 4
 You've just cloned your assignment and are beginning to work on it. You decide you will start up a php-server with the starter code. Note: In the beginning of the semester, the professor had all his students download the `Whitespace` and `php server` packages. However, you never did.
