@@ -13,7 +13,7 @@ If you have any questions regarding the use of the results of the user testing, 
 Scenario: You are a student taking INFO 1111, and your professor has just assigned the first coding project.
 
 ## Task 1
-In the folder `Documents/INFO111/Project1` you will find the starter code the professor had you download. Open the project in Atom.
+In the folder `Documents/INFO1111/Project1` you will find the starter code the professor had you download. Open the project in Atom.
 
 ## Task 2
 For INFO 1111, the professor gave you an example from last year's class to use as reference. You can find it in `Documents/INFO1111/Example17`. Open up the project in Atom.
