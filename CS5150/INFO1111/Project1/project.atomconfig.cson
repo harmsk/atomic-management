@@ -5,3 +5,6 @@ core: {
 }
 editor:
   tabLength:4
+  softWrap: true
+  preferredLineLength: 90
+  softWrapAtPreferredLineLength: true

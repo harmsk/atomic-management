@@ -17,7 +17,9 @@
 
 3. Make sure the `Php Server` package is installed. You can do this by doing "`Cmd+Shift+P -> Settings View: Open -> Install`"
 
-4. In your atom settings "`Cmd+Shift+P -> Settings View: Editor`", turn off Soft Wrap
+4. In your atom settings "`Cmd+Shift+P -> Settings View: Editor`", turn on Soft Wrap and softWrapAtPreferredLineLength
+
+5. In a new window of atom, open your entire documents folder, then close that `File -> Close Window`. This will make it so when the testee starts it up, they will start in your documents folder
 
 
 ### When the student gets there
