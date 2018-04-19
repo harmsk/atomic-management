@@ -21,17 +21,19 @@
 
 5. In a new window of atom, open your entire documents folder, then close that `File -> Close Window`. This will make it so when the testee starts it up, they will start in your documents folder
 
+6. Make sure that the config files are set to have all the line default stuff at 90 and packages reset to their original configuration. Easiest way is to copy from the git repository.
+
 
 ### When the student gets there
 1. Read them the script below:
 
 Thank you for participating in user testing for a new plugin to the Atom Text Editor; Today, you will be presented with a variety of tasks. **The focus of these tasks will be on the plugin itself, not on you as a user**. You are free to quit at any time.
 
-This test will take approximately 30 minutes. All personal data will be kept confidential, reviewed only by the development team and the CS 5150 course staff.  The results of your test will be written up in a report with all personally identifiable data removed.
+This test will take approximately 30 minutes. All personal data will be kept confidential, reviewed only by the our team and the CS 5150 course staff.  The results of your test will be written up in a report with all personally identifiable data removed.
 
-Over the course of the test, the development team will be recording your own screen interaction using screen capture. Moreover, the development team will be personally observing and noting your interaction with our program. Again, the focus of our notes will be on the program, not you as the user.
+Over the course of the test, your screen interaction will be recorded using screen capture. Moreover, the administrative team will be personally observing and noting your interaction with the program. Again, the focus of our notes will be on the program, not you as the user.
 
-You will be presented with a [guide](https://github.com/Saqif280/atomic-management#readme) on how to work with our package, but this will be the only guidance the development team will give you regarding the user testing. If you are truly stuck on a particular aspect, you may skip it; however, the development team will not be able to answer any questions you have while the test is being conducted. At the end of the test, the conductors of the test will ask you some questions regarding your experience with out package.
+You will be presented with a [guide](https://github.com/Saqif280/atomic-management#readme) on how to work with this particular package, but this will be the only guidance the you will have regarding the user testing. If you are truly stuck on a particular aspect, you may skip it; however, we will not be able to answer any questions you have while the test is being conducted. At the end of the test, we will ask you some questions regarding your experience with the package.
 
 If you have any questions regarding the use of the results of the user testing, feel free to contact the development team liaison, Daniel Hirsch, at djh329@cornell.edu. We thank you for your participation.
 
