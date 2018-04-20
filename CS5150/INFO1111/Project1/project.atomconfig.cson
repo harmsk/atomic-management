@@ -1,6 +1,6 @@
 core: {
   disabledPackages: [
-    # "php-server"
+    "php-server"
   ]
 }
 editor:
