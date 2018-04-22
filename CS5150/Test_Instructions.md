@@ -47,13 +47,13 @@ If you have any questions regarding the use of the results of the user testing, 
 
 ### After they complete the tasks
 
-1. Shut the screen sharing and stop the screen recording. At that point, now ask the following questions and record their responses. You should put their name and test date on wherever you log their responses:
+1. Shut the screen sharing and stop the screen recording. Explain the goal of our package in a bit more detail. At that point, now ask the following questions and record their responses. You should put their name and test date on wherever you log their responses:
 
- * On a scale of 1-5, one being not intuitive at all, 5 being highly intuitive, how would you rank our system
+ * On a scale of 1-5, one being not intuitive at all, 5 being highly intuitive, how would you evaluate our package?
  * Following on the last question, please explain your response. Please highlight any areas where you were confused or where you
-thought the system was effective
- * Who do you see as potential users of this program
- * On a scale of 1-5, 1 being uncomfortable and 5 being very comfortable, how comfortable are you with others configuring your atom workspace. Would it depend if the person configuring your workspace was a teacher, employer or other superior?
+thought the system was effective.
+ * Who do you see as potential users of this program?
+ * On a scale of 1-5, 1 being uncomfortable and 5 being very comfortable, how comfortable are you with others configuring your atom workspace? Would it depend if the person configuring your workspace was a teacher, employer or other superior?
 
 
  2. Thank them for their time

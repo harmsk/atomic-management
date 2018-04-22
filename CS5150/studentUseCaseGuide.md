@@ -5,9 +5,12 @@ This test will take approximately 30 minutes. All personal data will be kept con
 
 Over the course of the test, your screen interaction will be recorded using screen capture. Moreover, the administrative team will be personally observing and noting your interaction with the program. Again, the focus of our notes will be on the program, not you as the user.
 
-You will be presented with a [guide](https://github.com/Saqif280/atomic-management#readme) on how to work with this particular package, but this will be the only guidance the you will have regarding the user testing. If you are truly stuck on a particular aspect, you may skip it; however, we will not be able to answer any questions you have while the test is being conducted. At the end of the test, we will ask you some questions regarding your experience with the package.
+You will be presented with a [guide](https://github.com/Saqif280/atomic-management#readme) on how to work with this particular package, but this will be the only guidance the you will have regarding the user testing. If you are truly stuck on a particular aspect, you may skip it; however, we will not be able to answer any questions you have while the test is being conducted. At the end of the test, we will ask you some questions regarding your experience with the package. We will also give you a detailed introducation of our package after the test. But for now, please just focus on the tasks below.
 
 If you have any questions regarding the use of the results of the user testing, feel free to contact the development team liaison, Daniel Hirsch, at djh329@cornell.edu. We thank you for your participation.
+
+## Note: Before the test
+Please make sure your Atom text editor has a version of 1.26 before proceeding further. If your Atom are not on the 1.26, please get back to us ASAP.
 
 ## User Test
 Scenario: You are a student taking INFO 1111, and your professor has just assigned the first coding project.
@@ -19,7 +22,7 @@ In the folder `Documents/INFO1111/Project1` you will find the starter code the p
 For INFO 1111, the professor gave you an example from last year's class to use as reference. You can find it in `Documents/INFO1111/Example17`. Open up the project in the same window (add project folder).
 
 ## Task 3
-You, an ever diligent student, decide to go to office hours to discuss with your TA your new code. However, he has a small screen that he works off of, and wants you to make no line longer than 20 characters. As a regular user of Atom, you know that you don't have to sit and hit `enter` at every line, and that you can change the Atom preferred line length setting. Make your TA happy and have no line be longer than 20 characters. When you believe you have done this, signal the test administrator to show them.
+You, an ever diligent student, decide to go to office hours to discuss with your TA your new code for `Project1`. However, he has a small screen that he works off of, and wants you to make no line longer than 20 characters. As a regular user of Atom, you know that you don't have to sit and hit `enter` at every line, and that you can change the Atom preferred line length setting. Make your TA happy and have no line be longer than 20 characters. When you believe you have done this, signal the test administrator to show them.
 
 ## Task 4
-You've just cloned your assignment and are beginning to work on it. You decide you will start up a php-server with the starter code. Note: In the beginning of the semester, the professor had all his students download the `Whitespace` and `php server` packages. However, you never did.
+Lets keep going on `Project1`. You decide you will start up a php-server with the starter code to see how it looks. Note: In the beginning of the semester, the professor had all his students download the `Whitespace` and `php server` packages. However, you never did.
