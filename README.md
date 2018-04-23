@@ -15,7 +15,7 @@ Usage of this package should be straightforward after install, as long as the `a
 Project files should be specified similar to a `.atom/config.cson` file. For example:
 
 ```
-sample.atomconfig.cson
+// sample.atomconfig.cson
 
 core: {
   themes: [
