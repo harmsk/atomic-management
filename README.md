@@ -23,7 +23,7 @@ core: {
     "one-light-syntax"
   ]
   disabledPackages: [
-    # "php-server"
+    "php-server"
   ]
 }
 editor:
