@@ -45,7 +45,7 @@ For a full list of configurable content, please see the official atom documentat
 Features that pertain explicitly to styling, such as font color, can be changed by creating themes and placing them in the `core` array. See [here](https://flight-manual.atom.io/hacking-atom/sections/creating-a-theme/) for more details on creating themes.
 
 ## FAQ
-- [How do per-project config files interact with global config?](#How-do-per-project-config-files-interact-with global-config)
+- [How do per-project config files interact with global config?](#How-do-per-project-config-files-interact-with-global-config)
 - [How to reset my choice of which per-project config file to use as default?](#How-to-reset-my-choice-of-which-per-project-config-file-to-use-as-default)
 
 ## How do per-project config files interact with global config?
@@ -54,4 +54,4 @@ If you wish to change config on a per-project level, directly edit/create the `*
 If you wish to change _global_ config however, directly edit global configuration either through `Edit > Preferences` or `Edit > Config`.
 
 ## How to reset my choice of which per-project config file to use as default?
-In `Packages > atomic-management`, select the option `reset remembered config`. 
+In `Packages > atomic-management`, select the option `reset remembered config`.
