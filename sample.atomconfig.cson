@@ -4,7 +4,7 @@ core: {
     "one-dark-syntax"
   ]
   disabledPackages: [
-    # "markdown-preview"
+    "php-server"
   ]
 }
 editor:
