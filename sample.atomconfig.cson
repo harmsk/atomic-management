@@ -1,11 +1,22 @@
-core: {
-  themes: [
-    "one-dark-ui",
-    "one-dark-syntax"
-  ]
-  disabledPackages: [
-    "php-server"
-  ]
-}
-editor:
-  fontSize:15
+"*":
+    core: {
+        themes: [
+            "one-light-ui",
+            "one-light-syntax"
+        ]
+        disabledPackages: [
+            # "markdown-preview"
+        ]
+    }
+    editor:{
+        fontSize:15
+        tabLength: 4
+    }
+    "bracket-matcher":
+        autocompleteBrackets: true
+
+".source.python":
+    editor:
+        tabLength: 2
+    "bracket-matcher":
+        autocompleteBrackets: false
