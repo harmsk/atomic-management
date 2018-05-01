@@ -1,7 +1,10 @@
 core: {
   disabledPackages: [
-    # "php-server"
+    "php-server"
   ]
 }
 editor:
   tabLength:4
+  softWrap: true
+  preferredLineLength: 90
+  softWrapAtPreferredLineLength: true

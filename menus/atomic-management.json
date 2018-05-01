@@ -21,7 +21,11 @@
             {
               "label": "Reset remembered config",
               "command": "atomic-management:resetState"
-            }
+          },
+          {
+            "label": "Open active config file",
+            "command": "atomic-management:openConfigFile"
+          }
           ]
         }
       ]
