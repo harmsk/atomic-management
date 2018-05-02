@@ -19,17 +19,17 @@
               "command": "atomic-management:toggle"
             },
             {
-              "label": "Toggle enforcing configured packages",
-              "command": "atomic-management:toggleEnforcing"
-            },
-            {
               "label": "Reset remembered config",
               "command": "atomic-management:resetState"
           },
           {
             "label": "Open active config file",
             "command": "atomic-management:openConfigFile"
-          }
+          },
+          {
+            "label": "Toggle require configured pacakges",
+            "command": "atomic-management:toggleEnforced"
+         }
           ]
         }
       ]
