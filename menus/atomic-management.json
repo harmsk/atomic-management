@@ -19,6 +19,10 @@
               "command": "atomic-management:toggle"
             },
             {
+              "label": "Toggle enforcing configured packages",
+              "command": "atomic-management:toggleEnforcing"
+            },
+            {
               "label": "Reset remembered config",
               "command": "atomic-management:resetState"
           },
