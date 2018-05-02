@@ -4,6 +4,13 @@ Per-project Atom text editor configurations, for each window.
 ## Prerequisites
 Requires Atom v1.26 or above.
 
+## Installation (for development purposes)
+
+1. Unzip or clone the repository to any working directory
+2. `cd` into the `atomic-management` directory
+3. Run `apm link` to link the package to your Atom package directory
+4. Run `apm install` to install dependencies and install the package into Atom.
+
 ## Usage
 When a folder/project is loaded, Atomic Management will look for a
 `atomconfig.cson` or `atomconfig.json` file in the opened folder. If no such
