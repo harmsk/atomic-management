@@ -12,18 +12,18 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "atomic-management",
+          "label": "Atomic Management",
           "submenu": [
             {
               "label": "Toggle",
               "command": "atomic-management:toggle"
             },
             {
-              "label": "Reset remembered config",
+              "label": "Reset Remembered Config",
               "command": "atomic-management:resetState"
           },
           {
-            "label": "Open active config file",
+            "label": "Open Active Config File",
             "command": "atomic-management:openConfigFile"
           }
           ]
