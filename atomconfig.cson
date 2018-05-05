@@ -1,16 +1,16 @@
 "*":
     core: {
         themes: [
-            "one-light-ui",
-            "one-light-syntax"
+            # "one-light-ui",
+            # "one-light-syntax"
         ]
         disabledPackages: [
             # "markdown-preview"
         ]
     }
     editor:{
-        fontSize:15
-        tabLength: 4
+        fontSize:14
+        tabLength: 2
     }
     "bracket-matcher":
         autocompleteBrackets: true
