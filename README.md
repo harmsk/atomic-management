@@ -50,18 +50,23 @@ below.
     "bracket-matcher":
         autocompleteBrackets: true
 
-".source.php":
+".text.html.php":
     editor:
-        tabLength: 2
+        tabLength: 8
     "bracket-matcher":
         autocompleteBrackets: false
 
+".source.python":
+    editor:
+        tabLength: 2
 ```
 
 This package supports all Atom configurations, including but not limited to:
 
 - Specifying settings for the global namespace `*` (affects all files) or
   settings that only affect individual filetypes
+    - See [here](https://flight-manual.atom.io/using-atom/sections/basic-customization/#finding-a-languages-scope-name)
+      for instructions on how to find a language's scope name.
 - `core` and `editor` settings
     - Themes
     - Packages to disable

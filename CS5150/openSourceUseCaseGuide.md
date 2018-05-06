@@ -40,5 +40,12 @@ server, you also decide that it would be good to:
 Make a configuration file to enforce these ideas.
 
 ## Task 3
+Now open up the `Example17` folder **in the same window** (`File > Add Project Folder`).
+
+## Task 4
+You would like to set a tab spacing of length 4 (for all files) in the `Example17`
+folder. Make a configuration file to enforce this.
+
+## Task 5
 You want to prove to yourself that these configurations actually work. Try
 working with Atom in this project to make sure these configurations are active.
