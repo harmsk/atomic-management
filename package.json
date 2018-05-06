@@ -13,5 +13,17 @@
   "dependencies": {
     "glob": "^7.1.2",
     "season": "^6.0.2"
+  },
+  "configSchema": {
+    "isEnabled": {
+      "description": "Enable loading project configurations",
+      "type": "boolean",
+      "default": true
+    },
+    "enforceConfiguredPackages": {
+      "description": "Alert the user when configured packages in project configurations are not installed",
+      "type": "boolean",
+      "default": true
+    }
   }
 }
