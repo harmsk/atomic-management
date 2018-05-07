@@ -10,6 +10,13 @@
   "engines": {
     "atom": ">=1.26.0 <2.0.0"
   },
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+        }
+    }
+  }, 
   "dependencies": {
     "glob": "^7.1.2",
     "season": "^6.0.2"
