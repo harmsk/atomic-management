@@ -88,9 +88,9 @@ by creating themes and placing them in the `core` array. See
 [creating-a-theme]: https://flight-manual.atom.io/hacking-atom/sections/creating-a-theme/
 
 ## FAQ
-- [How do per-project config files interact with global config?](#How-do-per-project-config-files-interact-with-the-global-config)
-- [How to reset my choice of which per-project config file to use as default?](#How-do-i-reset-my-choice-of-which-per-project-config-file-to-use)
-- [How do I tell which per-project config file is currently in effect?](#How-do-i-tell-which-per-project-config-file-is-currently-in-effect)
+- [How do per-project config files interact with the global config?](#how-do-per-project-config-files-interact-with-the-global-config)
+- [How do I reset my choice of which per-project config file to use?](#how-do-i-reset-my-choice-of-which-per-project-config-file-to-use)
+- [How do I tell which per-project config file is currently in effect?](#how-do-i-tell-which-per-project-config-file-is-currently-in-effect)
 
 ### How do per-project config files interact with the global config?
 The settings described in the `atomconfig.cson` or `atomconfig.json` file
