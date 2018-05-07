@@ -2,7 +2,7 @@
 Per-project Atom text editor configurations, for each window.
 
 ## Prerequisites
-Requires Atom v1.26 or above.
+<span style="color:red">Requires Atom v1.26 or above.</span>
 
 ## Installation (for development purposes)
 
@@ -23,7 +23,7 @@ disable packages, modify settings for other packages, etc. on a per-project
 basis *without* tampering with global configurations.
 
 Users can begin using this package immediately after installation with no
-additional configuration other than the creation of the `atomconfig.cson` or 
+additional configuration other than the creation of the `atomconfig.cson` or
 `atomconfig.json` file. If you encounter issues, please submit a GitHub issue
 with as many details as possible.
 
