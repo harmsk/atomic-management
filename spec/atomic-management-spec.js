@@ -50,7 +50,6 @@ describe('AtomicManagement', () => {
         const filePath = path.join(directory, 'myProject.atomconfig.cson')
         console.log("path = " + filePath)
         //editor = atom.workspace.open(filePath)
-        editor = atom.workspace.buildTextEditor()
       })
       it('sets a project specification', () => {
         expect(atom.config.get('this.fontsize') == '10').toBe(false)
@@ -62,6 +61,7 @@ describe('AtomicManagement', () => {
         expect(atom.config.get('this.themes')).toBe('one-light-syntax')
       })
     });
+
 
     describe('Enable/Disable a project', () => {
       let editor
