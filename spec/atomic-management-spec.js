@@ -11,12 +11,30 @@ import AtomicManagement from '../lib/atomic-management';
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
 describe('AtomicManagement', () => {
-  let workspaceElement, activationPromise;
+  let editor, buffer, workspaceElement, activationPromise;
 
   beforeEach(() => {
-    workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('atomic-management');
+    const directory = temp.mkdirSync()
+    atom.project.setPaths([directory])
+    const filePath = path.join(directory,'/.atom/config.cson')
+
+    editor = await atom.workspace.open(filePath)
+    buffer = editor.getBuffer()
+    workspaceElement = atom.views.getView(atom.workspace)
+    await atom.packages.activatePackage('atomic-management')
   });
+
+  describe('when the editor is destroyed', () => {
+    beforeEach(() => editor.destroy())
+
+    it('does not leak subscriptions', async () => {
+      const {atomicManagement} = atom.packages.getActivePackage('atomic-management').mainModule
+      expect(atomicManagement.subscriptions.disposables.size).toBe(2)
+
+      await atom.packages.deactivatePackage('atomic-management')
+      expect(atomicManagement.subscriptions.disposables).toBeNull()
+    })
+    })
 
   // describe('when the atomic-management:toggle event is triggered', () => {
   //   it('hides and shows the modal panel', () => {
@@ -48,7 +66,8 @@ describe('AtomicManagement', () => {
     describe('Change configurations of a project', () => {
       let editor
       beforeEach(() => {
-        const directory = temp.mkdirSync()
+        //const directory = temp.mkdirSync()
+        const directory = '/Users/weiyoud/github/AtomicManagement'
         atom.project.setPaths([directory])
         const filePath = path.join(directory, '/.atom/config.cson')
         console.log("path = " + filePath)
@@ -56,6 +75,7 @@ describe('AtomicManagement', () => {
         editor = atom.workspace.open(filePath)
         // editor = atom.workspace.buildTextEditor()
         // console.log("editor path" + editor.)
+        console.log("after before each")
       })
         expect(atom.config.get('this.fontsize') == '10').toBe(false)
         TextBuffer.save()
@@ -63,7 +83,6 @@ describe('AtomicManagement', () => {
         expect(atom.config.get('this.themes')).toBe('one-light-ui')
         expect(atom.config.get('this.themes')).toBe('one-light-syntax')
       })
-    });
 
     describe('Enable/Disable a package', () => {
       let editor
@@ -104,7 +123,6 @@ describe('AtomicManagement', () => {
         expect(atom.config.get('this.themes')).toBe('one-light-ui')
         expect(atom.config.get('this.themes')).toBe('one-light-syntax')
       })
-    });
 
     describe('When package to be disabled is not installed', () => {
       let editor
@@ -123,7 +141,6 @@ describe('AtomicManagement', () => {
         pname = "markdown-preview"
         expect(installedPackageNames.has(pname)).toBe(false)
       })
-    });
 
     describe('Package reload test when users click on reload', () => {
       let editor
@@ -137,7 +154,6 @@ describe('AtomicManagement', () => {
         AtomicManagement.askReload()
         expect(atom.packages.isPackageDisabled('markdown-preview')).toBe(true)
       })
-    });
 
     describe('Package reload test when users click on Ignore', () => {
       let editor
@@ -151,7 +167,7 @@ describe('AtomicManagement', () => {
         AtomicManagement.askReload()
         expect(atom.packages.isPackageDisabled('markdown-preview')).toBe(false)
       })
-    });
+});
 
     // it('hides and shows the view', () => {
     //   // This test shows you an integration test testing at the view level.
