@@ -2,14 +2,20 @@
 Per-project Atom text editor configurations, for each window.
 
 ## Prerequisites
-Requires Atom v1.26 or above.
+<span style="color:red">Requires Atom v1.26 or above.</span>
 
-## Installation (for development purposes)
+<!-- ## Installation (for development purposes)
 
 1. Unzip or clone the repository to any working directory
 2. `cd` into the `atomic-management` directory
 3. Run `apm link` to link the package to your Atom package directory
-4. Run `apm install` to install dependencies and install the package into Atom.
+4. Run `apm install` to install dependencies and install the package into Atom. -->
+
+## Installation
+
+* In Atom, open *Preferences* (*Settings* on Windows)
+* Go to *Install* section
+* Search for `Atomic Management` package. Once it found, click `Install` button to install package.
 
 ## Usage
 When a folder/project is loaded, Atomic Management will look for a
@@ -23,7 +29,7 @@ disable packages, modify settings for other packages, etc. on a per-project
 basis *without* tampering with global configurations.
 
 Users can begin using this package immediately after installation with no
-additional configuration other than the creation of the `atomconfig.cson` or 
+additional configuration other than the creation of the `atomconfig.cson` or
 `atomconfig.json` file. If you encounter issues, please submit a GitHub issue
 with as many details as possible.
 
