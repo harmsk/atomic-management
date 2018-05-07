@@ -10,19 +10,28 @@ import AtomicManagement from '../lib/atomic-management';
 // To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
+fdescribe('Change configurations of a project', () => {
+    it('should change the font size of the panel', () => {
+      
+    });
+    it('should change the themes of the panel', () => {
+      expect('hh').toBe('jj');
+    });
+});
+
 describe('AtomicManagement', () => {
   let editor, buffer, workspaceElement, activationPromise;
 
-  beforeEach(() => {
-    const directory = temp.mkdirSync()
-    atom.project.setPaths([directory])
-    const filePath = path.join(directory,'/.atom/config.cson')
-
-    editor = await atom.workspace.open(filePath)
-    buffer = editor.getBuffer()
-    workspaceElement = atom.views.getView(atom.workspace)
-    await atom.packages.activatePackage('atomic-management')
-  });
+  // beforeEach(() => {
+  //   const directory = temp.mkdirSync()
+  //   atom.project.setPaths([directory])
+  //   const filePath = path.join(directory,'/.atom/config.cson')
+  //
+  //   editor = await atom.workspace.open(filePath)
+  //   buffer = editor.getBuffer()
+  //   workspaceElement = atom.views.getView(atom.workspace)
+  //   await atom.packages.activatePackage('atomic-management')
+  // });
 
   describe('when the editor is destroyed', () => {
     beforeEach(() => editor.destroy())
@@ -63,22 +72,29 @@ describe('AtomicManagement', () => {
   //     });
   //   })
 
+
     describe('Change configurations of a project', () => {
       let editor
       beforeEach(() => {
         //const directory = temp.mkdirSync()
-        const directory = '/Users/weiyoud/github/AtomicManagement'
+        const directory = '/Users/fanjianhua/Documents/Github/AtomicManagement'
         atom.project.setPaths([directory])
         const filePath = path.join(directory, '/.atom/config.cson')
         console.log("path = " + filePath)
 
-        editor = atom.workspace.open(filePath)
+
+        // var buffer = editor.getBuffer()
         // editor = atom.workspace.buildTextEditor()
         // console.log("editor path" + editor.)
         console.log("after before each")
       })
-        expect(atom.config.get('this.fontsize') == '10').toBe(false)
-        TextBuffer.save()
+      waitsForPromise(() => {
+        atom.workspace.open(filePath).then((editor) => {
+          expect(atom.config.get('this.fontSize')).toBe('20')
+          AtomicManagement.toggle()
+          expect(atom.config.get('this.fontSize')).not.toBe('14')
+        })
+      })
         expect(atom.config.get('this.fontSize')).toBe('15')
         expect(atom.config.get('this.themes')).toBe('one-light-ui')
         expect(atom.config.get('this.themes')).toBe('one-light-syntax')
