@@ -2,24 +2,23 @@
 Per-project Atom text editor configurations, for each window.
 
 ## Prerequisites
-<span style="color:red">Requires Atom v1.26 or above.</span>
-
-<!-- ## Installation (for development purposes)
-
-1. Unzip or clone the repository to any working directory
-2. `cd` into the `atomic-management` directory
-3. Run `apm link` to link the package to your Atom package directory
-4. Run `apm install` to install dependencies and install the package into Atom. -->
+**Requires Atom v1.26 or above.** This package **will not** work with older versions of Atom.
 
 ## Installation
 
 * In Atom, open *Preferences* (*Settings* on Windows)
-* Go to *Install* section
-* Search for `Atomic Management` package. Once it found, click `Install` button to install package.
+* Go to the *Install* section
+* Search for `Atomic Management` and click `Install`.
+
+Or through the command line:
+
+```
+apm install atomic-management
+```
 
 ## Usage
-When a folder/project is loaded, Atomic Management will look for a
-`.atom/config.cson` or `.atom/config.json` file in the opened folder. If no such
+When a project directory is loaded, Atomic Management will look for a
+`.atom/config.cson` or `.atom/config.json` file in the opened directory. If no such
 file is found, global configurations are used (as per usual). If a project file
 is found, it is loaded as Project Configurations and will override the global
 configuration when in the project's context.
@@ -35,8 +34,7 @@ with as many details as possible.
 
 ## Per-Project Config files: How to
 The `.atom/config.cson` or `.atom/config.json` file should be specified in a syntax
-similar to the global config file `.atom/config.cson`. An example is shown
-below.
+similar to the global config file. An example is shown below.
 
 ```
 "*":
@@ -79,7 +77,7 @@ This package supports all Atom configurations, including but not limited to:
 - Package-specific configurations, such as those of the `bracket-matcher`
   package
 
-For a full list of configurable content, please see the official atom
+For a full list of configurable content, please see the official Atom
 documentation [here](https://flight-manual.atom.io/using-atom/sections/basic-customization/#configuration-key-reference).
 
 Features that pertain explicitly to styling, such as font color, can be changed
@@ -89,8 +87,9 @@ by creating themes and placing them in the `core` array. See
 [creating-a-theme]: https://flight-manual.atom.io/hacking-atom/sections/creating-a-theme/
 
 ## FAQ
-- [How do per-project config files interact with global config?](#How-do-per-project-config-files-interact-with-global-config)
-- [How to reset my choice of which per-project config file to use as default?](#How-to-reset-my-choice-of-which-per-project-config-file-to-use-as-default)
+- [How do per-project config files interact with the global config?](#how-do-per-project-config-files-interact-with-the-global-config)
+- [How do I reset my choice of which per-project config file to use?](#how-do-i-reset-my-choice-of-which-per-project-config-file-to-use)
+- [How do I tell which per-project config file is currently in effect?](#how-do-i-tell-which-per-project-config-file-is-currently-in-effect)
 
 ### How do per-project config files interact with the global config?
 The settings described in the `.atom/config.cson` or `.atom/config.json` file
@@ -102,5 +101,9 @@ If you wish to change settings on a per-project level, directly edit/create the
 you wish to change global settings, directly edit the global configuration
 either through `Edit > Config` on Windows/Linux or `Atom > Config` on Mac.
 
-### How to reset my choice of which per-project config file to use as default?
-In `Packages > atomic-management`, select the option `Reset remembered config`.
+### How do I reset my choice of which per-project config file to use?
+In `Packages > atomic-management`, select the option `Reset Remembered Config`.
+
+### How do I tell which per-project config file is currently in effect?
+You can quickly open up the active per-project config file by selecting
+`Packages > atomic-management > Open Active Config File`.
