@@ -4,9 +4,9 @@
             "one-light-ui",
             "one-light-syntax"
         ]
-        #disabledPackages: [
-            # "markdown-preview"
-        #]
+        disabledPackages: [
+            "atomic-management"
+        ]
     }
     editor:{
         fontSize:12
