@@ -2,5 +2,10 @@
     editor:
         fontSize: 16
         tabLength: 2
+        softTabs: true
     "bracket-matcher":
         autocompleteBrackets: true
+
+".source.coffee":
+    editor:
+        tabLength: 4
