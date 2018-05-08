@@ -1,4 +1,10 @@
 "*":
+    core:
+        themes:
+            [
+                "one-light-ui",
+                "one-light-syntax",
+            ]
     editor:
         fontSize: 16
         tabLength: 2
