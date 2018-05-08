@@ -12,7 +12,7 @@ describe('backgroundColor', () => {
     // } catch(e) {
     //     console.log(e);
     // }
-    it('should change the backgroundColor of the panel', () => {
+    it('fontSize failed to change', () => {
         // for(let key in contents) {
         //     expect(atom.config.get(key)).not.toBe(contents[key]);
         // }
