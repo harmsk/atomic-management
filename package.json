@@ -14,7 +14,7 @@
     "status-bar": {
       "versions": {
         "^1.0.0": "consumeStatusBar"
-        }
+      }
     }
   },
   "dependencies": {
