@@ -46,7 +46,7 @@ describe('two ways of toggling a project', () => {
   })
 });
 
-describe("compare the user config file with the global config", () => {
+describe("verify that the config of current window be changed", () => {
     it('should be consistent with the global config', () => {
         let globalConfig, userConfig
         try {
