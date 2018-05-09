@@ -27,7 +27,7 @@
             "command": "atomic-management:openConfigFile"
           },
           {
-            "label": "Toggle require configured pacakges",
+            "label": "Enforce Required Configured Pacakges",
             "command": "atomic-management:toggleEnforced"
          }
           ]
