@@ -46,7 +46,7 @@ describe('two ways of toggling a project', () => {
   })
 });
 
-describe("verify that the config of current window be changed", () => {
+describe("verify that the config of current window be changed as .atom/confing.cson", () => {
     it('should be consistent with the global config', () => {
         let globalConfig, userConfig
         try {
