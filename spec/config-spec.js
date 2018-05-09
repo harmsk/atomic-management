@@ -47,19 +47,11 @@ describe('gets disabled packages', () => {
         var disabledPackages = AtomicManagement.getDisabledPackages(contents);
         expect(disabledPackages[0]).toBe('markdown-preview');
     })
-});
-
-describe('opens configuration files', () => {
-    let filePath
-    beforeEach(() => {
-        filePath = "users/weiyoud/github/AtomicManagement/.atom/config.cson"
-    })
-
-    it('apply users customerized configuration', () => {
+    
+    it('opens configuration files', () => {
         AtomicManagement.currentConfig = filePath
         console.log(AtomicManagement.currentConfig)
         AtomicManagement.openConfigFile()
-
     })
 });
 
