@@ -90,6 +90,7 @@ by creating themes and placing them in the `core` array. See
 - [How do per-project config files interact with the global config?](#how-do-per-project-config-files-interact-with-the-global-config)
 - [How do I reset my choice of which per-project config file to use?](#how-do-i-reset-my-choice-of-which-per-project-config-file-to-use)
 - [How do I tell which per-project config file is currently in effect?](#how-do-i-tell-which-per-project-config-file-is-currently-in-effect)
+- [Can different keybindings be set with this package?](#can-different-keybindings-be-set-with-this-package)
 
 ### How do per-project config files interact with the global config?
 The settings described in the `.atom/config.cson` or `.atom/config.json` file
@@ -107,3 +108,8 @@ In `Packages > atomic-management`, select the option `Reset Remembered Config`.
 ### How do I tell which per-project config file is currently in effect?
 You can quickly open up the active per-project config file by selecting
 `Packages > atomic-management > Open Active Config File`.
+
+### Can different keybindings be set with this package?
+No. This package only manages settings that are available through Atom's
+config.cson file. Atom manages keybindings through a separate keymap.cson
+file.
