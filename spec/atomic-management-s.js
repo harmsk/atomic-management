@@ -2,6 +2,8 @@
 
 const temp = require('temp')
 const path = require('path')
+const fs = require('fs');
+
 
 import AtomicManagement from '../lib/atomic-management';
 
