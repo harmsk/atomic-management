@@ -32,7 +32,7 @@ describe('two ways of toggling a project', () => {
 describe('gets disabled packages', () => {
     let filePath, contents
     beforeEach(() => {
-        filePath = "users/weiyoud/github/AtomicManagement/.atom/config.cson"
+        filePath = __dirname + "/../.atom/config.cson"
         contents = CSON.readFileSync(filePath);
     })
 
