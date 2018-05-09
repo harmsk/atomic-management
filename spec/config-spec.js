@@ -4,23 +4,7 @@ import AtomicManagement from '../lib/atomic-management';
 const fs = require('fs');
 const path = require('path');
 const temp = require('temp');
-// describe('backgroundColor', () => {
-//     // let contents;
-//     // let configName = __dirname + '/.atom/config.cson';
-//     // try {
-//     //     contents = CSON.readFileSync(configName);
-//     // } catch(e) {
-//     //     console.log(e);
-//     // }
-//
-//     it('fontSize failed to change', () => {
-//         // for(let key in contents) {
-//         //     expect(atom.config.get(key)).not.toBe(contents[key]);
-//         // }
-//
-//         expect(atom.config.get("editor.fontSize")).toBe(16);
-//     });
-// });
+const CSON = require('season');
 
 describe('two ways of toggling a project', () => {
   it('toggles the package', () => {
@@ -51,13 +35,42 @@ describe('two ways of toggling a project', () => {
   })
 });
 
+describe('gets disabled packages', () => {
+    let filePath, contents
+    beforeEach(() => {
+        filePath = "users/weiyoud/github/AtomicManagement/.atom/config.cson"
+        contents = CSON.readFileSync(filePath);
+    })
+
+    it('get disabled packages', () => {
+        expect(disabledPackages).not.toBeDefined();
+        var disabledPackages = AtomicManagement.getDisabledPackages(contents);
+        expect(disabledPackages[0]).toBe('markdown-preview');
+    })
+});
+
+describe('opens configuration files', () => {
+    let filePath
+    beforeEach(() => {
+        filePath = "users/weiyoud/github/AtomicManagement/.atom/config.cson"
+    })
+
+    it('apply users customerized configuration', () => {
+        AtomicManagement.currentConfig = filePath
+        console.log(AtomicManagement.currentConfig)
+        AtomicManagement.openConfigFile()
+
+    })
+});
+
+//
 // describe('reads the configuration file', () => {
 //     let filePath
 //     beforeEach(() => {
 //
 //         filePath = "users/weiyoud/github/AtomicManagement/.atom/config.cson"
 //         // console.log(atom.config.set("editor.fontSize", 13))
-//         console.log(AtomicManagement.installedPackageNames)
+//     //    console.log(atom.packages.getAvailablePackageNames())
 //     })
 //
 //     it('apply users customerized configuration', () => {
@@ -65,9 +78,9 @@ describe('two ways of toggling a project', () => {
 //       AtomicManagement.toggle()
 //       expect(atom.config.get('atomic-management.isEnabled')).toBe(true)
 //       // console.log(filePath)
-//
-//       //AtomicManagement.readConfigFile(filePath)
-//       console.log(atom.packages.getAvailablePackageNames())
+//       console.log(AtomicManagement.configuredFields)
+//       AtomicManagement.readConfigFile(filePath)
+//       //console.log(atom.packages.getAvailablePackageNames())
 //       //console.log(atom.config.get())
 //     })
 //
