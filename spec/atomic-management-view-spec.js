@@ -36,11 +36,11 @@ describe('gets disabled packages', () => {
         contents = CSON.readFileSync(filePath);
     })
 
-    it('get disabled packages', () => {
-        expect(disabledPackages).not.toBeDefined();
-        var disabledPackages = AtomicManagement.getDisabledPackages(contents);
-        expect(disabledPackages[0]).toBe('php-server');
-    })
+    // it('get disabled packages', () => {
+    //     expect(disabledPackages).not.toBeDefined();
+    //     var disabledPackages = AtomicManagement.getDisabledPackages(contents);
+    //     expect(disabledPackages[0]).toBe('php-server');
+    // })
 
     it('opens configuration files', () => {
         AtomicManagement.currentConfig = filePath

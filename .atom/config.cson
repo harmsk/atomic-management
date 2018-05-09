@@ -4,9 +4,9 @@
             "one-light-ui",
             "one-light-syntax"
         ]
-        disabledPackages: [
-            "php-server"
-        ]
+        # disabledPackages: [
+        #     "markdown-preview"
+        # ]
     }
     editor:{
         fontSize:12
