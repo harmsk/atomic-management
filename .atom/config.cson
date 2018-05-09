@@ -5,7 +5,7 @@
             "one-light-syntax"
         ]
         disabledPackages: [
-            "atomic-management"
+            "php-server"
         ]
     }
     editor:{
