@@ -17,22 +17,35 @@
 
 .am-label {
     background-color: lighten(@base-background-color,5%);
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 3%;
+    padding-bottom:3%;
     // font-size: 15px;
     font-weight: bold;
-    height: 10%;
+    height: 20%;
+    position: relative;
 }
 
-.am-values {
-    wigth: 90%;
-    margin-bottom: 5%;
-    padding-top: 1%;
-    padding-bottom: 2%;
-    flex-wrap: wrap;
+.am-label div {
+    position: relative;
     text-align: left;
-    // font-size: 15px;
-    background-color: @base-background-color;
+    margin-bottom: 10px;
+}
+
+.am-label a {
+    position: absolute;
+    padding-top: 5px;
+    margin-left: 25px;
+}
+
+.am-label span {
+    position: absolute;
+    padding-top: 5px;
+    margin-left: 25px;
+}
+
+.am-label input {
+  position: absolute;
+  margin-left: 5px;
 }
 
 .am-pane {
@@ -43,4 +56,5 @@
     margin-left: 15%;
     margin-right: 15%;
     background-color: @tool-panel-background-color;
+    position: relative;
 }
