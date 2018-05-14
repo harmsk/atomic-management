@@ -23,10 +23,6 @@
               "command": "atomic-management:resetState"
             },
             {
-              "label": "Open Active Config File",
-              "command": "atomic-management:openConfigFile"
-            },
-            {
               "label": "Toggle Require Configured Packages",
               "command": "atomic-management:toggleEnforced"
             }
