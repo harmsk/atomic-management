@@ -66,26 +66,26 @@ describe ("when the atomic-management:toggle() event is triggered", () => {
     });
 });
 
-// describe('when the atom text editor is destroyed', () => {
-//     let editor, workspaceElement, filePath
-//     beforeEach(async() => {
-//         const directory = temp.mkdirSync()
-//         atom.project.setPaths([directory])
-//         workspaceElement = atom.views.getView(atom.workspace)
-//         filePath = path.join(directory, 'testing.txt')
-//         editor =  atom.workspace.open(filePath)
-//         await atom.packages.activatePackage('atomic-management')
-//         editor.destroy()
-//     })
-//
-//     it('does not leak subscriptions', async() => {
-//       const {atomicmanagement} = atom.packages.getActivePackage('atomic-management').mainModule
-//       expect(atomicmanagement.subscriptions.disposables.size).toBe(5)
-//
-//       await atom.packages.deactivatePackage('atomic-management')
-//       expect(atomicmanagement.subscriptions.disposables).toBeNull()
-//     })
-// });
+describe('when the atom text editor is destroyed', () => {
+    let editor, workspaceElement, filePath
+    beforeEach(async() => {
+        const directory = temp.mkdirSync()
+        atom.project.setPaths([directory])
+        workspaceElement = atom.views.getView(atom.workspace)
+        filePath = path.join(directory, 'testing.txt')
+        editor =  atom.workspace.open(filePath)
+        await atom.packages.activatePackage('atomic-management')
+        editor.destroy()
+    })
+
+    it('does not leak subscriptions', async() => {
+      const {atomicmanagement} = atom.packages.getActivePackage('atomic-management').mainModule
+      expect(atomicmanagement.subscriptions.disposables.size).toBe(5)
+
+      await atom.packages.deactivatePackage('atomic-management')
+      expect(atomicmanagement.subscriptions.disposables).toBeNull()
+    })
+});
 
 describe('when the disabledPackages have extra packages', () => {
     let disabledPackages, packages, disabledPackagesTypo, disabledPackagesEmpty, emptyPackages
@@ -113,11 +113,5 @@ describe('when the disabledPackages have extra packages', () => {
         expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(false)
         packages.push("atom-clock")
         expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(true)
-    })
-});
-
-describe('testing', () => {
-    beforeEach(() => {
-        console.log(atom.notifications)
     })
 });
