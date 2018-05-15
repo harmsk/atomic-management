@@ -103,11 +103,11 @@ you wish to change global settings, directly edit the global configuration
 either through `Edit > Config` on Windows/Linux or `Atom > Config` on Mac.
 
 ### How do I reset my choice of which per-project config file to use?
-In `Packages > atomic-management`, select the option `Reset Remembered Config`.
+In `Packages > Atomic Management`, select the option `Reset Remembered Config`.
 
 ### How do I tell which per-project config file is currently in effect?
 You can quickly open up the active per-project config file by selecting
-`Packages > atomic-management > Open Active Config File`.
+`Packages > Atomic Management > Open Active Config File`.
 
 ### Can different keybindings be set with this package?
 No. This package only manages settings that are available through Atom's
