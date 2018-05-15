@@ -1,0 +1,67 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.am-status-bar {
+    color: @text-color;
+    background-color: @tool-panel-background-color;
+    display: table;
+    // height: 500px;
+    width: 500px;
+    // overflow: scroll;
+    max-height: 400px;
+    position: relative;
+}
+
+.am-label {
+    background-color: lighten(@base-background-color,5%);
+    padding-top: 3%;
+    padding-bottom:3%;
+    // font-size: 15px;
+    font-weight: bold;
+    height: 20%;
+    position: relative;
+    border:1px solid darken(@base-background-color,5%);
+    // border-width: thin;
+    // border-color: darken(@base-background-color,5%)
+}
+
+.am-label div {
+    position: relative;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.am-label a {
+    position: absolute;
+    padding-top: 5px;
+    margin-left: 25px;
+}
+
+.am-label span {
+    position: absolute;
+    padding-top: 5px;
+    margin-left: 25px;
+}
+
+.am-label input {
+  position: absolute;
+  margin-left: 5px;
+}
+
+.am-label i {
+  position: absolute;
+}
+
+.am-pane {
+    display: table-row-group;
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: @tool-panel-background-color;
+    position: relative;
+}
