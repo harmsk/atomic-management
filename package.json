@@ -26,8 +26,8 @@
     "season": "^6.0.2"
   },
   "configSchema": {
-    "isEnabled": {
-      "description": "Enable loading project configurations",
+    "isActive": {
+      "description": "Actively detect and load project configurations",
       "type": "boolean",
       "default": true
     },
