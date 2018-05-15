@@ -27,7 +27,7 @@
   },
   "configSchema": {
     "isActive": {
-      "description": "Actively detect and load project configurations",
+      "description": "Detect and load project configurations automatically",
       "type": "boolean",
       "default": true
     },
