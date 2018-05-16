@@ -53,10 +53,6 @@ similar to the global config file. An example is shown below.
         tabLength: 8
     "bracket-matcher":
         autocompleteBrackets: false
-
-".source.python":
-    editor:
-        tabLength: 2
 ```
 
 This package supports all Atom configurations, including but not limited to:
