@@ -18,7 +18,7 @@ apm install atomic-management
 
 ## Usage
 When a project directory is loaded, Atomic Management will look for a
-`.atom/config.cson` or `.atom/config.json` file in the opened directory. If no such
+`.atom/config.cson` file in the opened directory. If no such
 file is found, global configurations are used (as per usual). If a project file
 is found, it is loaded as Project Configurations and will override the global
 configuration when in the project's context.
@@ -28,27 +28,21 @@ disable packages, modify settings for other packages, etc. on a per-project
 basis *without* tampering with global configurations.
 
 Users can begin using this package immediately after installation with no
-additional configuration other than the creation of the `.atom/config.cson` or
-`.atom/config.json` file. If you encounter issues, please submit a GitHub issue
-with as many details as possible.
+additional configuration other than the creation of the `.atom/config.cson` file.
+If you encounter issues, please submit a GitHub issue with as many details as possible.
 
 ## Per-Project Config files: How to
-The `.atom/config.cson` or `.atom/config.json` file should be specified in a syntax
+The `.atom/config.cson` file should be specified in a syntax
 similar to the global config file. An example is shown below.
 
 ```
 "*":
     core: {
-        themes: [
-            "one-light-ui",
-            "one-light-syntax"
-        ]
         disabledPackages: [
             "markdown-preview"
         ]
     }
     editor: {
-        fontSize: 15
         tabLength: 4
     }
     "bracket-matcher":
@@ -104,12 +98,12 @@ configurations.
 - [Can different keybindings be set with this package?](#can-different-keybindings-be-set-with-this-package)
 
 ### How do per-project config files interact with the global config?
-The settings described in the `.atom/config.cson` or `.atom/config.json` file
+The settings described in the `.atom/config.cson` file
 will override the global Atom configuration, and each operates independently of
 each other.
 
 If you wish to change settings on a per-project level, directly edit/create the
-`.atom/config.cson` or `.atom/config.json` under the project's root directory. If
+`.atom/config.cson` under the project's root directory. If
 you wish to change global settings, directly edit the global configuration
 either through `Edit > Config` on Windows/Linux or `Atom > Config` on Mac.
 
