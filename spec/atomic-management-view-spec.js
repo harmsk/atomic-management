@@ -38,10 +38,6 @@ describe('gets disabled packages', () => {
     //     expect(disabledPackages[0]).toBe('php-server');
     // })
 
-    it('opens configuration files', () => {
-        AtomicManagement.currentConfig = filePath
-        AtomicManagement.openConfigFile()
-    })
 });
 
 describe("atomic-management default toggle", () => {
@@ -113,5 +109,33 @@ describe('when the disabledPackages have extra packages', () => {
         expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(false)
         packages.push("atom-clock")
         expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(true)
+    })
+});
+
+describe('Prompts users to install packages', () => {
+    it('asks users to install packages', () => {
+        AtomicManagement.askInstallPackages()
+    })
+});
+
+describe('When there is an invalid/non-existing package', () => {
+    let packageNames
+    beforeEach(() => {
+        packageNames = ["no-sense-testing", "haha-testing"]
+    })
+
+    it('alerts users to check packages', () => {
+        AtomicManagement.alertBadPackages(packageNames)
+    })
+});
+
+describe('Checks given packages list for uninstalled or non-existing packages', () => {
+    let packageNames
+    beforeEach(() => {
+        packageNames = ["whitespace", "haha-testing"]
+    })
+
+    it('checks packages', () => {
+        AtomicManagement.checkPackages(packageNames)
     })
 });
