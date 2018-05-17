@@ -112,30 +112,76 @@ describe('when the disabledPackages have extra packages', () => {
     })
 });
 
-describe('Prompts users to install packages', () => {
-    it('asks users to install packages', () => {
-        AtomicManagement.askInstallPackages()
-    })
-});
-
-describe('When there is an invalid/non-existing package', () => {
+describe('Prompts users to handle packages errors', () => {
     let packageNames
     beforeEach(() => {
-        packageNames = ["no-sense-testing", "haha-testing"]
+        packageNames = ["haha-testing", "happy"]
     })
 
-    it('alerts users to check packages', () => {
+    it('asks users to install packages', () => {
+        AtomicManagement.askInstallPackages(packageNames)
+    })
+
+    it('alerts users to check the configuration file', () => {
         AtomicManagement.alertBadPackages(packageNames)
     })
-});
 
-describe('Checks given packages list for uninstalled or non-existing packages', () => {
-    let packageNames
-    beforeEach(() => {
-        packageNames = ["whitespace", "haha-testing"]
+    it('', () => {
+        AtomicManagement.installPackages(packageNames)
     })
 
-    it('checks packages', () => {
+    it('checks if ', () => {
         AtomicManagement.checkPackages(packageNames)
+    })
+
+
+});
+
+describe('tests status bar', () => {
+    let contentsWithAsterisk, contentsWithoutAsterisk
+    beforeEach(() => {
+        contentsWithAsterisk = {"*": "Testing"}
+        contentsWithoutAsterisk = {"": "Testing"}
+    })
+
+    it('Parses a configuration file without Asterisk', () => {
+        var returnedContents = AtomicManagement.standardizeConfig(contentsWithoutAsterisk)
+        expect(JSON.stringify(returnedContents)).toBe(JSON.stringify({"*":contentsWithoutAsterisk}))
+    })
+
+    it('Parses a configuration file with Asterisk', () => {
+        var returnedContents = AtomicManagement.standardizeConfig(contentsWithAsterisk)
+        expect(JSON.stringify(returnedContents)).toBe(JSON.stringify(contentsWithAsterisk))
+    })
+});
+
+describe('Checks "disabledPackages"', () => {
+    let contentsWithAsterisk, contentsWithoutAsterisk, contentsWithAsteriskAndDisabledPackages
+    beforeEach(() => {
+        contentsWithAsterisk = {"*": "Testing"}
+        contentsWithoutAsterisk = {"": "Testing"}
+        contentsWithAsteriskAndDisabledPackages = {"*": {"core":{"disabledPackages":["haha", "lol"]}}}
+    })
+
+    it('There are two disabledPackages', () => {
+        var returnedContents = AtomicManagement.getDisabledPackages(contentsWithAsteriskAndDisabledPackages)
+        expect(JSON.stringify(returnedContents)).toBe(JSON.stringify(["haha", "lol"]))
+    })
+
+    it('There is no disabledPackage or core', () => {
+        var returnedContents = AtomicManagement.getDisabledPackages(contentsWithoutAsterisk)
+        expect(JSON.stringify(returnedContents)).toBe(JSON.stringify([]))
+    })
+});
+
+describe('Checks "disabledPackages"', () => {
+    let contentsWithAsterisk, contentsWithoutAsterisk, contentsWithAsteriskAndDisabledPackages
+    beforeEach(() => {
+
+    })
+
+    it('There are two disabledPackages', () => {
+        AtomicManagement.askReload()
+        console.log(atom.notifications)
     })
 });
