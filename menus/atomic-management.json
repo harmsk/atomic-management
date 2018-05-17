@@ -21,15 +21,11 @@
             {
               "label": "Reset Remembered Config",
               "command": "atomic-management:resetState"
-          },
-          {
-            "label": "Open Active Config File",
-            "command": "atomic-management:openConfigFile"
-          },
-          {
-            "label": "Toggle require configured pacakges",
-            "command": "atomic-management:toggleEnforced"
-         }
+            },
+            {
+              "label": "Toggle Require Configured Packages",
+              "command": "atomic-management:toggleEnforced"
+            }
           ]
         }
       ]
