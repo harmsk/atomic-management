@@ -9,10 +9,29 @@
     background-color: @tool-panel-background-color;
     display: table;
     // height: 500px;
-    width: 500px;
+    // width: 500px;
     // overflow: scroll;
     max-height: 400px;
     position: relative;
+}
+
+.status-bar-tooltip {
+    .tooltip-inner.tooltip-inner {
+      padding: @component-padding / 2;
+      background-color: @tool-panel-background-color;
+      border: 1px solid @base-border-color;
+      box-shadow: 0 4px 8px hsla(0, 0, 0, .1);
+      color: @text-color;
+    }
+    &.top .tooltip-arrow.tooltip-arrow {
+    width: @component-padding;
+    height: @component-padding;
+    border-width: 0 0 1px 1px;
+    border-color: @base-border-color;
+    background-color: @tool-panel-background-color;
+    border-bottom-right-radius: 2px;
+    transform: rotate(-45deg);
+  }
 }
 
 .am-label {
@@ -24,40 +43,37 @@
     height: 20%;
     position: relative;
     border:1px solid darken(@base-background-color,5%);
+    border-radius: 3px;
     // border-width: thin;
     // border-color: darken(@base-background-color,5%)
 }
 
-.am-label div {
+.am-label  div {
     position: relative;
     text-align: left;
-    margin-bottom: 10px;
 }
 
 .am-label a {
-    position: absolute;
+    position: relative;
     padding-top: 5px;
-    margin-left: 25px;
-}
-
-.am-label span {
-    position: absolute;
-    padding-top: 5px;
-    margin-left: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .am-label input {
-  position: absolute;
-  margin-left: 5px;
+  position: relative;
+  margin-left: 10px;
 }
 
 .am-label i {
-  position: absolute;
+  margin: 2px;
+  position: relative;
 }
 
 .am-pane {
     display: table-row-group;
-    width: 90%;
+    // width: 90%;
+    padding: 10px;
     margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 15%;
