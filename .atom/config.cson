@@ -6,8 +6,8 @@
                 "one-light-syntax",
             ]
     editor:
-        fontSize: 16
-        tabLength: 2
+        fontSize: 12
+        tabLength: 4
         softTabs: true
     "bracket-matcher":
         autocompleteBrackets: true
