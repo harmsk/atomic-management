@@ -61,55 +61,6 @@ describe ("when the atomic-management:toggle() event is triggered", () => {
     });
 });
 
-describe('when the atom text editor is destroyed', () => {
-    let editor, workspaceElement, filePath
-    beforeEach(async() => {
-        const directory = temp.mkdirSync()
-        atom.project.setPaths([directory])
-        workspaceElement = atom.views.getView(atom.workspace)
-        filePath = path.join(directory, 'testing.txt')
-        editor =  atom.workspace.open(filePath)
-        await atom.packages.activatePackage('atomic-management')
-        editor.destroy()
-    })
-
-    it('does not leak subscriptions', async() => {
-      const {atomicmanagement} = atom.packages.getActivePackage('atomic-management').mainModule
-      expect(atomicmanagement.subscriptions.disposables.size).toBe(5)
-
-      await atom.packages.deactivatePackage('atomic-management')
-      expect(atomicmanagement.subscriptions.disposables).toBeNull()
-    })
-});
-
-describe('when the disabledPackages have extra packages', () => {
-    let disabledPackages, packages, disabledPackagesTypo, disabledPackagesEmpty, emptyPackages
-    beforeEach(() => {
-        disabledPackages = ["markdown-preview", "php-server", "atom-clock"]
-        disabledPackagesTypo = ["markdown-preview", "php-server", "atom clock"]
-        packages = ["markdown-preview", "php-server"]
-        disabledPackagesEmpty = []
-        emptyPackages = []
-    })
-
-    it('disabledPackages do have other packages', () => {
-        expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(false)
-    })
-
-    it('finds typo in disabledPackages', () => {
-        expect(AtomicManagement.compareArrays(disabledPackages, disabledPackagesTypo)).toBe(false)
-    })
-
-    it('expects nothing in disabledPackages', () => {
-        expect(AtomicManagement.compareArrays(disabledPackagesEmpty, emptyPackages)).toBe(true)
-    })
-
-    it('checks all packages in disabledPackages are installed', () => {
-        expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(false)
-        packages.push("atom-clock")
-        expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(true)
-    })
-});
 
 describe('prompts users to handle packages errors', () => {
     let packageNames, packagesMap
@@ -160,12 +111,12 @@ describe('Checks "disabledPackages"', () => {
     beforeEach(() => {
         contentsWithAsterisk = {"*": "Testing"}
         contentsWithoutAsterisk = {"": "Testing"}
-        contentsWithAsteriskAndDisabledPackages = {"*": {"core":{"disabledPackages":["haha", "lol"]}}}
+        contentsWithAsteriskAndDisabledPackages = {"*": {"core":{"disabledPackages":["testing", "package"]}}}
     })
 
     it('checks if there are two packages to be disabled', () => {
         var returnedContents = AtomicManagement.getDisabledPackages(contentsWithAsteriskAndDisabledPackages)
-        expect(JSON.stringify(returnedContents)).toBe(JSON.stringify(["haha", "lol"]))
+        expect(JSON.stringify(returnedContents)).toBe(JSON.stringify(["testing", "package"]))
     })
 
     it('checks if there is no disabledPackage or core', () => {
@@ -176,7 +127,7 @@ describe('Checks "disabledPackages"', () => {
 
 describe('reloads', () => {
     it('asks users to reload packages', () => {
-        AtomicManagement.askReload("haha", "okay")
+        AtomicManagement.askReload("testing", "")
     })
 });
 
