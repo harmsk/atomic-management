@@ -27,11 +27,6 @@
     "season": "^6.0.2"
   },
   "configSchema": {
-    "isActive": {
-      "description": "Detect and load project configurations automatically",
-      "type": "boolean",
-      "default": true
-    },
     "enforceConfiguredPackages": {
       "description": "Alert the user when configured packages in project configurations are not installed",
       "type": "boolean",
