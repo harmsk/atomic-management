@@ -1,8 +1,0 @@
-'.platform-darwin':
-  'cmd-t': 'atomic-management:toggle'
-
-'.platform-win32':
-  'ctrl-t': 'atomic-management:toggle'
-
-'.platform-linux':
-  'ctrl-t': 'atomic-management:toggle'
