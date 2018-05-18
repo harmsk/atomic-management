@@ -11,9 +11,9 @@ describe('two ways of toggling a project', () => {
   it('toggles the package', () => {
           expect(atom.config.get('atomic-management')).not.toBeDefined()
           AtomicManagement.toggle()
-          expect(atom.config.get('atomic-management.isEnabled')).toBe(true)
+          expect(atom.config.get('atomic-management.isActive')).toBe(true)
           AtomicManagement.toggle()
-          expect(atom.config.get('atomic-management.isEnabled')).toBe(false)
+          expect(atom.config.get('atomic-management.isActive')).toBe(false)
   })
 
   it('enforces to toggle the package', () => {
@@ -37,7 +37,6 @@ describe('gets disabled packages', () => {
     //     var disabledPackages = AtomicManagement.getDisabledPackages(contents);
     //     expect(disabledPackages[0]).toBe('php-server');
     // })
-
 });
 
 describe("atomic-management default toggle", () => {
@@ -97,25 +96,27 @@ describe('when the disabledPackages have extra packages', () => {
         expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(false)
     })
 
-    it('typo in disabledPackages', () => {
+    it('finds typo in disabledPackages', () => {
         expect(AtomicManagement.compareArrays(disabledPackages, disabledPackagesTypo)).toBe(false)
     })
 
-    it('nothing in disabledPackages', () => {
+    it('expects nothing in disabledPackages', () => {
         expect(AtomicManagement.compareArrays(disabledPackagesEmpty, emptyPackages)).toBe(true)
     })
 
-    it('all packages in disabledPackages are installed', () => {
+    it('checks all packages in disabledPackages are installed', () => {
         expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(false)
         packages.push("atom-clock")
         expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(true)
     })
 });
 
-describe('Prompts users to handle packages errors', () => {
-    let packageNames
+describe('prompts users to handle packages errors', () => {
+    let packageNames, packagesMap
     beforeEach(() => {
         packageNames = ["haha-testing", "happy"]
+        packagesMap = new Map()
+        packagesMap.set("[]", [])
     })
 
     it('asks users to install packages', () => {
@@ -126,14 +127,13 @@ describe('Prompts users to handle packages errors', () => {
         AtomicManagement.alertBadPackages(packageNames)
     })
 
-    it('', () => {
+    it('installs specified packages', () => {
         AtomicManagement.installPackages(packageNames)
     })
 
-    it('checks if ', () => {
-        AtomicManagement.checkPackages(packageNames)
+    it('checks existance of packages', () => {
+        AtomicManagement.checkPackages(packagesMap)
     })
-
 
 });
 
@@ -144,12 +144,12 @@ describe('tests status bar', () => {
         contentsWithoutAsterisk = {"": "Testing"}
     })
 
-    it('Parses a configuration file without Asterisk', () => {
+    it('parses a configuration file without Asterisk', () => {
         var returnedContents = AtomicManagement.standardizeConfig(contentsWithoutAsterisk)
         expect(JSON.stringify(returnedContents)).toBe(JSON.stringify({"*":contentsWithoutAsterisk}))
     })
 
-    it('Parses a configuration file with Asterisk', () => {
+    it('parses a configuration file with Asterisk', () => {
         var returnedContents = AtomicManagement.standardizeConfig(contentsWithAsterisk)
         expect(JSON.stringify(returnedContents)).toBe(JSON.stringify(contentsWithAsterisk))
     })
@@ -163,25 +163,25 @@ describe('Checks "disabledPackages"', () => {
         contentsWithAsteriskAndDisabledPackages = {"*": {"core":{"disabledPackages":["haha", "lol"]}}}
     })
 
-    it('There are two disabledPackages', () => {
+    it('checks if there are two packages to be disabled', () => {
         var returnedContents = AtomicManagement.getDisabledPackages(contentsWithAsteriskAndDisabledPackages)
         expect(JSON.stringify(returnedContents)).toBe(JSON.stringify(["haha", "lol"]))
     })
 
-    it('There is no disabledPackage or core', () => {
+    it('checks if there is no disabledPackage or core', () => {
         var returnedContents = AtomicManagement.getDisabledPackages(contentsWithoutAsterisk)
         expect(JSON.stringify(returnedContents)).toBe(JSON.stringify([]))
     })
 });
 
-describe('Checks "disabledPackages"', () => {
-    let contentsWithAsterisk, contentsWithoutAsterisk, contentsWithAsteriskAndDisabledPackages
-    beforeEach(() => {
-
+describe('reloads', () => {
+    it('asks users to reload packages', () => {
+        AtomicManagement.askReload("haha", "okay")
     })
+});
 
-    it('There are two disabledPackages', () => {
-        AtomicManagement.askReload()
-        console.log(atom.notifications)
+describe('global configuration', () => {
+    it('restores global configurations', () => {
+        AtomicManagement.restoreGlobalConfig()
     })
 });
