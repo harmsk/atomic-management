@@ -61,7 +61,6 @@ describe ("when the atomic-management:toggle() event is triggered", () => {
     });
 });
 
-
 describe('prompts users to handle packages errors', () => {
     let packageNames, packagesMap
     beforeEach(() => {
