@@ -7,15 +7,6 @@ const CSON = require('season')
 
 import AtomicManagement from '../lib/atomic-management';
 
-describe('two ways of toggling a project', () => {
-  it('toggles the package', () => {
-          expect(atom.config.get('atomic-management')).not.toBeDefined()
-          AtomicManagement.toggle()
-          expect(atom.config.get('atomic-management.isActive')).toBe(true)
-          AtomicManagement.toggle()
-          expect(atom.config.get('atomic-management.isActive')).toBe(false)
-  })
-
   it('enforces to toggle the package', () => {
           expect(atom.config.get('atomic-management')).not.toBeDefined()
           AtomicManagement.toggleEnforced()
@@ -37,28 +28,6 @@ describe('gets disabled packages', () => {
     //     var disabledPackages = AtomicManagement.getDisabledPackages(contents);
     //     expect(disabledPackages[0]).toBe('php-server');
     // })
-});
-
-describe("atomic-management default toggle", () => {
-  let activationPromise, workspaceElement
-  beforeEach(() => {
-    workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('atomic-management')
-    })
-describe ("when the atomic-management:toggle() event is triggered", () => {
-    it ("attaches and then detaches the view", () => {
-        expect(workspaceElement.querySelector('.atomic-management')).not.toExist()
-
-        //  This is an activation event, triggering it will cause the package to be
-        //  activated.
-        atom.commands.dispatch(workspaceElement, 'atomic-management:toggle()')
-        runs => {
-            expect(workspaceElement.querySelector('.atomic-management')).toExist()
-            atom.commands.dispatch(workspaceElement, 'atomic-management:toggle()')
-            expect(workspaceElement.querySelector('.atomic-management')).not.toExist()
-        };
-    });
-    });
 });
 
 describe('prompts users to handle packages errors', () => {

@@ -1,11 +1,5 @@
 {
   "context-menu": {
-    "atom-text-editor": [
-      {
-        "label": "Toggle atomic-management",
-        "command": "atomic-management:toggle"
-      }
-    ]
   },
   "menu": [
     {
@@ -14,10 +8,6 @@
         {
           "label": "Atomic Management",
           "submenu": [
-            {
-              "label": "Toggle",
-              "command": "atomic-management:toggle"
-            },
             {
               "label": "Reset Remembered Config",
               "command": "atomic-management:resetState"
