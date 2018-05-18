@@ -82,35 +82,6 @@ describe('when the atom text editor is destroyed', () => {
     })
 });
 
-describe('when the disabledPackages have extra packages', () => {
-    let disabledPackages, packages, disabledPackagesTypo, disabledPackagesEmpty, emptyPackages
-    beforeEach(() => {
-        disabledPackages = ["markdown-preview", "php-server", "atom-clock"]
-        disabledPackagesTypo = ["markdown-preview", "php-server", "atom clock"]
-        packages = ["markdown-preview", "php-server"]
-        disabledPackagesEmpty = []
-        emptyPackages = []
-    })
-
-    it('disabledPackages do have other packages', () => {
-        expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(false)
-    })
-
-    it('finds typo in disabledPackages', () => {
-        expect(AtomicManagement.compareArrays(disabledPackages, disabledPackagesTypo)).toBe(false)
-    })
-
-    it('expects nothing in disabledPackages', () => {
-        expect(AtomicManagement.compareArrays(disabledPackagesEmpty, emptyPackages)).toBe(true)
-    })
-
-    it('checks all packages in disabledPackages are installed', () => {
-        expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(false)
-        packages.push("atom-clock")
-        expect(AtomicManagement.compareArrays(disabledPackages, packages)).toBe(true)
-    })
-});
-
 describe('prompts users to handle packages errors', () => {
     let packageNames, packagesMap
     beforeEach(() => {
