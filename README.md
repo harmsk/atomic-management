@@ -114,3 +114,12 @@ You can quickly open up the active per-project config file by selecting
 No. This package only manages settings that are available through Atom's global
 `config.cson` file. Atom manages keybindings through a separate keymap.cson
 file.
+
+## Troubleshooting
+
+### Broken Themes Switching
+If you receive the error message
+```
+Uncaught TypeError: Cannot read property 'isEqual' of undefined
+```
+Try clearing your Electron cache. For instructions on how to do this, see [here](https://stackoverflow.com/questions/31446782/how-to-clear-the-cache-data-in-electronatom-shell/43221140)

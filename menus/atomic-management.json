@@ -10,12 +10,16 @@
           "submenu": [
             {
               "label": "Reset Remembered Config",
-              "command": "atomic-management:resetState"
+              "command": "atomic-management:Reset Remembered Config"
             },
             {
               "label": "Toggle Require Configured Packages",
-              "command": "atomic-management:toggleEnforced"
-            }
+              "command": "atomic-management:Toggle Require Configured Packages"
+          },
+          {
+              "label": "Show Project Settings",
+              "command": "atomic-management:Show Project Settings"
+          }
           ]
         }
       ]
