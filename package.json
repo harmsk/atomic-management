@@ -7,6 +7,7 @@
   "activationCommands": {},
   "repository": "https://github.com/saqif280/atomic-management",
   "license": "MIT",
+  "authors": "Daniel Hirsch, Tyler Ishikawa, Joseph Chuang, Jacob Rauch, Saqif Badruddin, Athena Danlu Huang, Ryan Jianhua Fan, Weiyou Dai",
   "engines": {
     "atom": ">=1.26.0 <2.0.0"
   },
