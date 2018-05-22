@@ -19,7 +19,6 @@
     }
   },
   "dependencies": {
-    "font-awesome": "^4.7.0",
     "glob": "^7.1.2",
     "merge-json": "0.1.0-b.3",
     "react": "^16.3.2",
