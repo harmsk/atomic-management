@@ -85,7 +85,7 @@ the local configuration files that are currently active and allow you to
 activate, deactivate, or rearrange the order of the local project
 configurations.
 
-![Status Bar Screenshot](screenshots/statusbar.png)
+![Status Bar Screenshot](screenshot.png)
 
 ## FAQ
 - [How do per-project config files interact with the global config?](#how-do-per-project-config-files-interact-with-the-global-config)
