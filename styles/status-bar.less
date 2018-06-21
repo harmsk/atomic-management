@@ -4,12 +4,9 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.am-status-bar {
+.config-status-bar {
   color: @text-color;
   background-color: @tool-panel-background-color;
-  display: table;
-  max-height: 400px;
-  position: relative;
 }
 
 .status-bar-tooltip {
@@ -30,46 +27,7 @@
     transform: rotate(-45deg);
   }
 }
-
-.am-label {
-  background-color: lighten(@base-background-color,5%);
-  padding-top: 3%;
-  padding-bottom:3%;
-  font-weight: bold;
-  height: 20%;
-  position: relative;
-  border:1px solid darken(@base-background-color,5%);
-  border-radius: 3px;
-}
-
-.am-label div {
-  position: relative;
-  text-align: left;
-}
-
-.am-label a {
-  position: relative;
-  padding-top: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.am-label input {
-  position: relative;
-  margin-left: 10px;
-}
-
-.am-label i {
-  margin: 2px;
-  position: relative;
-  float: right;
-}
-
-.am-label i.lighten {
-  opacity: .3;
-}
-
-.am-pane {
+.config-pane {
   display: table-row-group;
   padding: 10px;
   margin-top: 5%;
@@ -77,5 +35,41 @@
   margin-left: 15%;
   margin-right: 15%;
   background-color: @tool-panel-background-color;
-  position: relative;
+}
+
+.config-tile {
+  background-color: lighten(@base-background-color,5%);
+  padding: 10px 10px;
+  height: 20%;
+  border:1px solid darken(@base-background-color,5%);
+  border-radius: 3px;
+}
+
+.config-tile div {
+  text-align: left;
+}
+
+.config-tile label {
+  margin: auto 5px;
+  font-size: @font-size;
+  white-space: nowrap;
+}
+
+.config-tile input {
+  vertical-align: -2px;
+  margin: 0;
+  padding: 0;
+}
+
+.config-tile span {
+  float: right;
+}
+
+.config-tile span.up {
+  margin-left: 8px;
+  margin-right: 3px;
+}
+
+.config-tile span.lighten {
+  opacity: .3;
 }
