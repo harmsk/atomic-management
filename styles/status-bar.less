@@ -5,25 +5,22 @@
 @import "ui-variables";
 
 .am-status-bar {
-    color: @text-color;
-    background-color: @tool-panel-background-color;
-    display: table;
-    // height: 500px;
-    // width: 500px;
-    // overflow: scroll;
-    max-height: 400px;
-    position: relative;
+  color: @text-color;
+  background-color: @tool-panel-background-color;
+  display: table;
+  max-height: 400px;
+  position: relative;
 }
 
 .status-bar-tooltip {
-    .tooltip-inner.tooltip-inner {
-      padding: @component-padding / 2;
-      background-color: @tool-panel-background-color;
-      border: 1px solid @base-border-color;
-      box-shadow: 0 4px 8px hsla(0, 0, 0, .1);
-      color: @text-color;
-    }
-    &.top .tooltip-arrow.tooltip-arrow {
+  .tooltip-inner.tooltip-inner {
+    padding: @component-padding / 2;
+    background-color: @tool-panel-background-color;
+    border: 1px solid @base-border-color;
+    box-shadow: 0 4px 8px hsla(0, 0, 0, .1);
+    color: @text-color;
+  }
+  &.top .tooltip-arrow.tooltip-arrow {
     width: @component-padding;
     height: @component-padding;
     border-width: 0 0 1px 1px;
@@ -35,29 +32,26 @@
 }
 
 .am-label {
-    background-color: lighten(@base-background-color,5%);
-    padding-top: 3%;
-    padding-bottom:3%;
-    // font-size: 15px;
-    font-weight: bold;
-    height: 20%;
-    position: relative;
-    border:1px solid darken(@base-background-color,5%);
-    border-radius: 3px;
-    // border-width: thin;
-    // border-color: darken(@base-background-color,5%)
+  background-color: lighten(@base-background-color,5%);
+  padding-top: 3%;
+  padding-bottom:3%;
+  font-weight: bold;
+  height: 20%;
+  position: relative;
+  border:1px solid darken(@base-background-color,5%);
+  border-radius: 3px;
 }
 
 .am-label div {
-    position: relative;
-    text-align: left;
+  position: relative;
+  text-align: left;
 }
 
 .am-label a {
-    position: relative;
-    padding-top: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
+  position: relative;
+  padding-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .am-label input {
@@ -72,17 +66,16 @@
 }
 
 .am-label i.lighten {
-    opacity: .3;
+  opacity: .3;
 }
 
 .am-pane {
-    display: table-row-group;
-    // width: 90%;
-    padding: 10px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 15%;
-    margin-right: 15%;
-    background-color: @tool-panel-background-color;
-    position: relative;
+  display: table-row-group;
+  padding: 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: @tool-panel-background-color;
+  position: relative;
 }

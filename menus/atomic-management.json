@@ -15,11 +15,11 @@
             {
               "label": "Toggle Require Configured Packages",
               "command": "atomic-management:Toggle Require Configured Packages"
-          },
-          {
+            },
+            {
               "label": "Show Project Settings",
               "command": "atomic-management:Show Project Settings"
-          }
+            }
           ]
         }
       ]
