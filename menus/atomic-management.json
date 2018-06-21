@@ -9,16 +9,16 @@
           "label": "Atomic Management",
           "submenu": [
             {
-              "label": "Reset Remembered Config",
-              "command": "atomic-management:Reset Remembered Config"
+              "label": "Show Window Config",
+              "command": "atomic-management:open-window-config"
+            },
+            {
+              "label": "Reset Remembered Window Config",
+              "command": "atomic-management:reset-remembered-window-config"
             },
             {
               "label": "Toggle Require Configured Packages",
-              "command": "atomic-management:Toggle Require Configured Packages"
-            },
-            {
-              "label": "Show Project Settings",
-              "command": "atomic-management:Show Project Settings"
+              "command": "atomic-management:toggle-require-configured-packages"
             }
           ]
         }
