@@ -2,21 +2,28 @@
   "name": "atomic-management",
   "main": "./lib/atomic-management",
   "version": "0.1.2",
-  "description": "Per-project Atom text editor configurations, for each window",
-  "keywords": [],
+  "description": "Per-project Atom config",
+  "keywords": [
+    "project",
+    "config",
+    "settings"
+  ],
   "activationCommands": {},
-  "repository": "https://github.com/saqif280/atomic-management",
+  "repository": "https://github.com/harmsk/atomic-management",
   "license": "MIT",
-  "authors": "Daniel Hirsch, Tyler Ishikawa, Joseph Chuang, Jacob Rauch, Saqif Badruddin, Athena Danlu Huang, Ryan Jianhua Fan, Weiyou Dai",
+  "contributors": [
+    "Daniel Hirsch <djh329@cornell.edu>",
+    "Tyler Ishikawa <tyi3@cornell.edu>",
+    "Joseph Chuang <jcc436@cornell.edu>",
+    "Jacob Rauch <jer322@cornell.edu>",
+    "Saqif Badruddin <ssb229@cornell.edu>",
+    "Athena Danlu Huang <dh527@cornell.edu>",
+    "Ryan Jianhua Fan <jf773@cornell.edu>",
+    "Weiyou Dai <wd248@cornell.edu>",
+    "Kyle J. Harms <kyle.harms@cornell.edu> (https://kharms.infosci.cornell.edu/)"
+  ],
   "engines": {
     "atom": ">=1.26.0 <2.0.0"
-  },
-  "consumedServices": {
-    "status-bar": {
-      "versions": {
-        "^1.0.0": "consumeStatusBar"
-      }
-    }
   },
   "dependencies": {
     "glob": "^7.1.2",
@@ -25,9 +32,16 @@
     "react-dom": "^16.3.2",
     "season": "^6.0.2"
   },
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
   "configSchema": {
     "enforceConfiguredPackages": {
-      "description": "Alert the user when configured packages in project configurations are not installed",
+      "description": "Prompt to install packages in project configurations that are not installed",
       "type": "boolean",
       "default": true
     }
