@@ -12,7 +12,7 @@ describe("verify that the config of current window be changed as .atom/confing.c
       globalConfig = CSON.readFileSync(__dirname + "/test.cson");
       userConfig = CSON.readFileSync(__dirname + "/../.atom/config.cson");
     } catch(e) {
-      console.log(e);
+      console.error(e);
     }
     expect(globalConfig).not.toBeNull();
     expect(userConfig).not.toBeNull();

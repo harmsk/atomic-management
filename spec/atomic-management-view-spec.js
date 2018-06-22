@@ -9,9 +9,9 @@ import AtomicManagement from '../lib/atomic-management';
 
 it('enforces to toggle the package', () => {
   expect(atom.config.get('atomic-management')).not.toBeDefined()
-  AtomicManagement.toggleEnforced()
+  AtomicManagement.toggleEnforceConfiguredPackages()
   expect(atom.config.get('atomic-management.enforceConfiguredPackages')).toBe(true)
-  AtomicManagement.toggleEnforced()
+  AtomicManagement.toggleEnforceConfiguredPackages()
   expect(atom.config.get('atomic-management.enforceConfiguredPackages')).toBe(false)
 });
 
@@ -88,7 +88,7 @@ describe('Checks "disabledPackages"', () => {
 
 describe('reloads', () => {
   it('asks users to reload packages', () => {
-    AtomicManagement.askReload("testing", "")
+    AtomicManagement.askReloadAtom("testing", "")
   })
 });
 
