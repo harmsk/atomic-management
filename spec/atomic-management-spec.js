@@ -8,12 +8,9 @@ const CSON = require('season');
 describe("verify that the config of current window be changed as .atom/confing.cson", () => {
   it('should be consistent with the global config', () => {
     let globalConfig, userConfig
-    try {
-      globalConfig = CSON.readFileSync(__dirname + "/test.cson");
-      userConfig = CSON.readFileSync(__dirname + "/../.atom/config.cson");
-    } catch(e) {
-      console.error(e);
-    }
+    globalConfig = CSON.readFileSync(__dirname + "/test.cson");
+    userConfig = CSON.readFileSync(__dirname + "/../example-config.cson");
+    console.log(globalConfig);
     expect(globalConfig).not.toBeNull();
     expect(userConfig).not.toBeNull();
     function compare(user, glob) {
@@ -32,10 +29,6 @@ describe("verify that the config of current window be changed as .atom/confing.c
         }
       }
     }
-    if("*" in userConfig) {
-      compare(userConfig["*"], globalConfig)
-    } else {
-      compare(userConfig["*"], globalConfig)
-    }
+    compare(userConfig["*"], globalConfig)
   });
 });

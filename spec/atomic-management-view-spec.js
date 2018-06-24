@@ -7,12 +7,14 @@ const CSON = require('season')
 
 import AtomicManagement from '../lib/atomic-management';
 
-it('enforces to toggle the package', () => {
-  expect(atom.config.get('atomic-management')).not.toBeDefined()
-  AtomicManagement.toggleEnforceConfiguredPackages()
-  expect(atom.config.get('atomic-management.enforceConfiguredPackages')).toBe(true)
-  AtomicManagement.toggleEnforceConfiguredPackages()
-  expect(atom.config.get('atomic-management.enforceConfiguredPackages')).toBe(false)
+describe("verify enforce configured packages", () => {
+  it('enforces to toggle the package', () => {
+    expect(atom.config.get('atomic-management')).not.toBeDefined()
+    AtomicManagement.toggleEnforceConfiguredPackages()
+    expect(atom.config.get('atomic-management.enforceConfiguredPackages')).toBe(true)
+    AtomicManagement.toggleEnforceConfiguredPackages()
+    expect(atom.config.get('atomic-management.enforceConfiguredPackages')).toBe(false)
+  });
 });
 
 describe('gets disabled packages', () => {

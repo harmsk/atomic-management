@@ -32,6 +32,9 @@
     "react-dom": "^16.3.2",
     "season": "^6.0.2"
   },
+  "devDependencies": {
+    "temp": "^0.8.3"
+  },
   "consumedServices": {
     "status-bar": {
       "versions": {
