@@ -1,17 +1,17 @@
 "*":
-    core:
-        themes:
-            [
-                "one-light-ui",
-                "one-light-syntax",
-            ]
-    editor:
-        fontSize: 12
-        tabLength: 4
-        softTabs: true
-    "bracket-matcher":
-        autocompleteBrackets: true
+  core:
+    themes:
+      [
+        "one-light-ui",
+        "one-light-syntax",
+      ]
+  editor:
+    fontSize: 12
+    tabLength: 4
+    softTabs: true
+  "bracket-matcher":
+      autocompleteBrackets: true
 
 ".source.coffee":
-    editor:
-        tabLength: 4
+  editor:
+      tabLength: 4
