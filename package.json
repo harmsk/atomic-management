@@ -1,7 +1,7 @@
 {
   "name": "atomic-management",
   "main": "./lib/atomic-management",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Per-project Atom config",
   "keywords": [
     "project",
